@@ -27,7 +27,7 @@ let Usuario = [
     nombres: "Diego",
     apellido: "Andres",
     consultas: "¿Reparaciones?",
-    id: 9,
+    id: "9",
   },
 ];
 
@@ -41,14 +41,15 @@ function azares() {
 
 //---------------------------------------------------------------------------------Buscador
 
-var valor = document.getElementById("Busqueda").value;
-var Valores = Usuario.length;
+let valor = document.getElementById("Busqueda");
+const B = valor.value;
 
-var Busqueda = document.getElementById("Busqueda");
+var Valores = Usuario.length -1;
+
 var Devolver = Usuario.find(Encontrado => Encontrado.apellido == Busqueda);
 
 function Buscar() {
-  if (Usuario[4].id == document.getElementById("Busqueda").value) {
+  if (valor.value == Usuario[3].id) {
     return reInprimir();
   } else {
     console.log("Usuario no encontrado");
