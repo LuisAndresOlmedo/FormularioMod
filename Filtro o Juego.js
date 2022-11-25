@@ -1,7 +1,7 @@
 let Usuario = [
   {
-    nombres: "Luis",
-    apellido: "Andres",
+    nombres: "Luis Andres",
+    apellido: "Olmedo",
     consultas: "¿Reparaciones?",
     id: 8000,
   },
@@ -19,13 +19,13 @@ let Usuario = [
   },
   {
     nombres: "Leo",
-    apellido: "Andres",
+    apellido: "Villalva",
     consultas: "¿Reparaciones?",
     id: "10",
   },
   {
     nombres: "Diego",
-    apellido: "Andres",
+    apellido: "Malqui",
     consultas: "¿Reparaciones?",
     id: "9",
   },
@@ -42,30 +42,30 @@ function azares() {
 //---------------------------------------------------------------------------------Buscador
 
 let valor = document.getElementById("Busqueda");
-const B = valor.value;
 
 var Valores = Usuario.length -1;
 
-var Devolver = Usuario.find(Encontrado => Encontrado.apellido == Busqueda);
-
 function Buscar() {
-  if (valor.value == Usuario[3].id) {
-    return reInprimir();
+  
+  var Personas = Usuario.find(Encontrado => Encontrado.id == valor.value);
+  
+  function reInprimir() {
+    Datos =
+      Personas.nombres +
+      "<br/>" +
+      Personas.apellido +
+      "<br/>" +
+      Personas.consultas +
+      "<br/>" +
+      Personas.id;
+     document.getElementById("Cliente").innerHTML = "<H1>Estos son tus datos</H1>" + Datos;
+  };
+
+  if (valor.value == Personas.id) {
+    return Personas + reInprimir();
   } else {
     console.log("Usuario no encontrado");
   }
-}
-
-function reInprimir() {
-  Datos =
-    Usuario[Valores].nombres +
-    "<br/>" +
-   Usuario[Valores].apellido +
-    "<br/>" +
-    Usuario[Valores].consultas +
-    "<br/>" +
-    Usuario[Valores].id;
-  document.getElementById("Cliente").innerHTML = "<H1>Tus Datos..</H1>" + Datos;
 }
 
 //---------------------------------------------------------------------------------Buscador
