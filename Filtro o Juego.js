@@ -4,30 +4,35 @@ let Usuario = [
     apellido: "Olmedo",
     consultas: "¿Reparaciones?",
     id: 8000,
+    Identificador: 0
   },
   {
     nombres: "Juan",
     apellido: "Andres",
     consultas: "¿Reparaciones?",
     id: 36,
+    Identificador: 1
   },
   {
     nombres: "Jose",
     apellido: "Montenegro",
     consultas: "¿Reparaciones?",
     id: 15,
+    Identificador: 2
   },
   {
     nombres: "Leo",
     apellido: "Villalva",
     consultas: "¿Reparaciones?",
     id: "10",
+    Identificador: 3
   },
   {
     nombres: "Diego",
     apellido: "Malqui",
     consultas: "¿Reparaciones?",
     id: "9",
+    Identificador: 4
   },
 ];
 
@@ -43,12 +48,33 @@ function azares() {
 
 let valor = document.getElementById("Busqueda");
 
-var Valores = Usuario.length -1;
+// var Valores = Usuario.length -1;
+var Personas = Usuario.find(Encontrado => Encontrado.id == valor.value);
+
 
 function Buscar() {
-  
+
   var Personas = Usuario.find(Encontrado => Encontrado.id == valor.value);
   
+
+  // const resultado = Personas.id;
+  // valor.value == resultado estaba dentro de donde Va personas ahora.
+  
+  if (Personas) {
+    console.log("Te encontre");
+    reInprimir();
+    pushDatos()
+  }
+  else {
+    console.log("Usuario no encontrado");
+  }
+
+  function pushDatos() {
+    document.getElementById("Nombres").value = Personas.nombres;
+    document.getElementById("Apellido").value = Personas.apellido;
+    document.getElementById("Consultas").value = Personas.consultas;
+  }
+
   function reInprimir() {
     Datos =
       Personas.nombres +
@@ -60,13 +86,21 @@ function Buscar() {
       Personas.id;
      document.getElementById("Cliente").innerHTML = "<H1>Estos son tus datos</H1>" + Datos;
   };
-
-  if (valor.value == Personas.id) {
-    return Personas + reInprimir();
-  } else {
-    console.log("Usuario no encontrado");
-  }
+  return
 }
+
+function reEditarDatos() {
+  const valorUsuario = Usuario.find.length(Encontrado => Encontrado.id == valor.value);
+  var valor = Usuario.push({
+    nombres: Buscar().nombres = Usuario[valorUsuario].nombres,
+    apellido: Buscar().apellido  = Usuario[valorUsuario].apellido,
+    consultas: Buscar().consultas  = Usuario[valorUsuario].consultas,
+    id: Buscar().id  = Usuario[valorUsuario].id
+  })
+  return Identidad
+}
+
+
 
 //---------------------------------------------------------------------------------Buscador
 
@@ -85,9 +119,12 @@ function DatosUsuarios() {
       apellido: soloApellido,
       consultas: soloConsultas,
       id: azares(),
+      Identificador: Usuario.length
     }));
   ImprimirDatos();
 }
+
+//---------------------------------------------------------------------------------Pusheo de Datos
 
 function ImprimirDatos() {
   Datos =
@@ -111,8 +148,6 @@ function Renombrar() {
 var EtiquetaP = {};
 var Etiquetas = "Nombres";
 document.getElementById("Cliente").innerHTML = "<H1>Datos:</H1>" + Etiquetas;
-
-//document.getElementById("Cliente").innerHTML = Usuario[5].nombres;
 
 // Imprime el nombre de un arrays
 
