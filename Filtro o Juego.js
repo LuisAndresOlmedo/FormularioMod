@@ -165,6 +165,14 @@ function Actualizar() {
 };
 
 document.getElementById("Actualizar").innerHTML = Prueba; 
-  
+
+
+const button = document.getElementById("Guardando");
+button.addEventListener('click', () => {
+  var users = Usuario.length;
+  const exportarid = "<p>" + "Codigo se Seguridad:" + Usuario[users - 1].id + "</p>" ;
+  document.getElementById("Seguridad:").innerHTML = exportarid;
+});
+
 // imprime actualizacion
 //La idea hacer un chat bots pero tambien la consulta
