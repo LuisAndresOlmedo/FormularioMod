@@ -54,7 +54,7 @@ function Buscar() {
   
   if (Personas) {
   //  reInprimir();
-    push  ()
+    pushDatos()
   }
   else {
     console.log("Usuario no encontrado");
@@ -64,7 +64,7 @@ function Buscar() {
     document.getElementById("Nombres").value = Personas.nombres;
     document.getElementById("Apellido").value = Personas.apellido;
     document.getElementById("Consultas").value = Personas.consultas;
-  }
+  };
 
 //  function reInprimir() {
 //    Datos =
@@ -78,7 +78,7 @@ function Buscar() {
 //     document.getElementById("Cliente").innerHTML = "<H1>Estos son tus datos</H1>" + Datos;
 //  };
 //  return Personas.Identificador
-//};
+};
 
 
 function reEditarDatos() {
@@ -165,5 +165,6 @@ function Actualizar() {
 };
 
 document.getElementById("Actualizar").innerHTML = Prueba; 
+  
 // imprime actualizacion
-//La idea hacer un chat bots pero tambien la consulta.
+//La idea hacer un chat bots pero tambien la consulta
