@@ -48,22 +48,13 @@ function azares() {
 
 let valor = document.getElementById("Busqueda");
 
-// var Valores = Usuario.length -1;
-var Personas = Usuario.find(Encontrado => Encontrado.id == valor.value);
-
-
 function Buscar() {
 
   var Personas = Usuario.find(Encontrado => Encontrado.id == valor.value);
   
-
-  // const resultado = Personas.id;
-  // valor.value == resultado estaba dentro de donde Va personas ahora.
-  
   if (Personas) {
-    console.log("Te encontre");
-    reInprimir();
-    pushDatos()
+  //  reInprimir();
+    push  ()
   }
   else {
     console.log("Usuario no encontrado");
@@ -75,33 +66,30 @@ function Buscar() {
     document.getElementById("Consultas").value = Personas.consultas;
   }
 
-  function reInprimir() {
-    Datos =
-      Personas.nombres +
-      "<br/>" +
-      Personas.apellido +
-      "<br/>" +
-      Personas.consultas +
-      "<br/>" +
-      Personas.id;
-     document.getElementById("Cliente").innerHTML = "<H1>Estos son tus datos</H1>" + Datos;
-  };
-  return
-}
+//  function reInprimir() {
+//    Datos =
+//      Personas.nombres +
+//      "<br/>" +
+//      Personas.apellido +
+//      "<br/>" +
+//      Personas.consultas +
+//      "<br/>" +
+//      Personas.id;
+//     document.getElementById("Cliente").innerHTML = "<H1>Estos son tus datos</H1>" + Datos;
+//  };
+//  return Personas.Identificador
+//};
+
 
 function reEditarDatos() {
-  const valorUsuario = Usuario.find.length(Encontrado => Encontrado.id == valor.value);
-  var valor = Usuario.push({
-    nombres: Buscar().nombres = Usuario[valorUsuario].nombres,
-    apellido: Buscar().apellido  = Usuario[valorUsuario].apellido,
-    consultas: Buscar().consultas  = Usuario[valorUsuario].consultas,
-    id: Buscar().id  = Usuario[valorUsuario].id
+  var valores = Usuario.push({
+    nombres: Usuario[Constante].nombres = Usuario[Constante].nombres,
+    apellido: Buscar().apellido  = Usuario[Constante].apellido,
+    consultas: Buscar().consultas  = Usuario[Constante].consultas,
+    id: Buscar().id  = Usuario[Constante].id
   })
-  return Identidad
+  return
 }
-
-
-
 //---------------------------------------------------------------------------------Buscador
 
 function DatosUsuarios() {
@@ -127,22 +115,31 @@ function DatosUsuarios() {
 //---------------------------------------------------------------------------------Pusheo de Datos
 
 function ImprimirDatos() {
-  Datos =
-    Usuario[5].nombres +
+  const valorUsuario = Usuario.find(Encontrado => Encontrado.id == valor.value);
+  if (valorUsuario) {
+    var Constante = valorUsuario.Identificador;
+    Datos =
+    Usuario[Constante].nombres +
     "<br/>" +
-    Usuario[5].apellido +
+    Usuario[Constante].apellido +
     "<br/>" +
-    Usuario[5].consultas +
+    Usuario[Constante].consultas +
     "<br/>" +
-    Usuario[5].id;
-  document.getElementById("Cliente").innerHTML = "<H1>Tus Datos.</H1>" + Datos;
+    Usuario[Constante].id;
+    document.getElementById("Cliente").innerHTML = "<H1>Tus Datos.</H1>" + Datos;
+  } else {
+    document.getElementById("Cliente").innerHTML = "<H1>Se ha guardado tu usuario ✔</H1>";
+  }
+  
 }
 
 function Renombrar() {
-  Usuario[5].nombres = document.getElementById("Nombres").value;
-  Usuario[5].apellido = document.getElementById("Apellido").value;
-  Usuario[5].consultas = document.getElementById("Consultas").value;
-  ImprimirDatos();
+  const valorUsuario = Usuario.find(Encontrado => Encontrado.id == valor.value);
+  var Constante = valorUsuario.Identificador;
+  Usuario[Constante].nombres = document.getElementById("Nombres").value;
+  Usuario[Constante].apellido = document.getElementById("Apellido").value;
+  Usuario[Constante].consultas = document.getElementById("Consultas").value;
+//  ImprimirDatos();
 }
 
 var EtiquetaP = {};
@@ -153,17 +150,20 @@ document.getElementById("Cliente").innerHTML = "<H1>Datos:</H1>" + Etiquetas;
 
 // Codigo para arrays
 
+var Prueba = ["¿Hace tu pregunta?",];
+
 function Actualizar() {
   var Inputinit = document.getElementById("OnclickVacio");
-  Prueba = Inputinit.value;
-  document.getElementById("Actualizar").innerHTML = Prueba;
-}
+  const info = Inputinit.value;
+  let numerossumados = Prueba.length; 
+  valoresfinaes = Prueba.push({
+    mensaje: info,
+    N: Prueba.length
+  })
+    const ImprimirD = "<tr>" + Prueba[numerossumados].mensaje + "</tr>" + "<br/>";
+  document.getElementById("table").innerHTML = ImprimirD;
+};
 
-var Prueba = "¿Hace tu pregunta?";
-
-document.getElementById("Actualizar").innerHTML = Prueba; // imprime actualizacion
-
+document.getElementById("Actualizar").innerHTML = Prueba; 
+// imprime actualizacion
 //La idea hacer un chat bots pero tambien la consulta.
-
-
-// Buscador -----

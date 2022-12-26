@@ -4,25 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juega y filtra</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <title>Formularios ✅</title>
   </head>
   <body>
     <form>
+      <input type="text" value="Busqueda" id="Busqueda"/><br />
+      <input type="button" value="Buscar" id="botoncito" onclick="Buscar()"/>
+    </form>
+    <hr style="border: 1px solid #ccc;">
+    <form id="email">
       <input type="text" id="Nombres" /><br />
       <input type="text" id="Apellido" /><br />
       <input type="text" id="Consultas" /><br />
-      <input type="text" id="Id" /><br />
       <input type="button" value="Guardar" onclick="DatosUsuarios()" />
       <input type="button" value="Renombrar" onclick="Renombrar()" />
     </form>
+    <hr style="border: 1px solid #ccc;">
     <p id="Cliente"></p>
+    <table id="table"></table>
     <form>
       <input type="text" id="OnclickVacio" /><br />
       <input type="button" value="Consultar" onclick="Actualizar()" />
-    </form>
-    <form>
-      <input type="text" value="Busqueda" id="Busqueda"/><br />
-      <input type="button" value="Buscar" onclick="Buscar()"/>
     </form>
     <p id="Actualizar"></p>
     <script src="./Filtro o Juego.js"></script>
