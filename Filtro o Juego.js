@@ -1,3 +1,19 @@
+let valor = document.getElementById("Busqueda");
+const button = document.getElementById("Guardando");
+const codigoSeg = document.getElementById("Seguridad:");
+const etiquetaPos = document.getElementById("Cliente");
+const Tocador = document.getElementById("OnclickVacio");
+var imagenes = document.getElementById('ImagenPerfil');
+var Consutas = document.getElementById("Consultas");
+var Apellido = document.getElementById("Apellido");
+var Inputinit = document.getElementById("Nombres");
+var Contraseña = document.getElementById("contraseña");
+var dia = document.getElementById("numeroDeFecha");
+var mes = document.getElementById("fechaNacimiento");
+var Correito = document.getElementById("Correo");
+let EtiquetaP = {};
+var Etiquetas = "Se cargaran los datos";
+
 let Usuario = [
   {
     nombres: "Luis Andres",
@@ -28,56 +44,49 @@ let Usuario = [
     Identificador: 3
   },
   {
-    nombres: "Diego",
-    apellido: "Malqui",
+    nombres: "Fernando",
+    apellido: "Flores",
     consultas: "¿Reparaciones?",
     id: "9",
     Identificador: 4
   },
 ];
 
+let cantidadUsuario = Usuario.length;
+
+etiquetaPos.innerHTML = "<H1>Informacón personal:</H1>" + Etiquetas; //Inicializacion de Elemento.
+
 function azares() {
-  var numeroUsuario = Usuario.length;
+  var numeroUsuario = cantidadUsuario;
   var azar = Math.random() * 10000000000000;
   var redondeo = Math.floor(azar)
   let numeros = numeroUsuario * redondeo;
   return numeros
 }
 
+button.addEventListener('click', () => {
+  const exportarid = "<p>"+"Codigo se Seguridad:"+Usuario[Usuario.length - 1].id+"</p>";
+  codigoSeg.innerHTML = exportarid;
+});
+
 //---------------------------------------------------------------------------------Buscador
 
-let valor = document.getElementById("Busqueda");
 
 function Buscar() {
-
   var Personas = Usuario.find(Encontrado => Encontrado.id == valor.value);
-  
-  if (Personas) {
-  //  reInprimir();
-    pushDatos()
-  }
-  else {
-    console.log("Usuario no encontrado");
-  }
+    if (Personas) {
+      pushDatos()
+    }
+    else {
+      console.log("Usuario no encontrado");
+    }
 
   function pushDatos() {
-    document.getElementById("Nombres").value = Personas.nombres;
-    document.getElementById("Apellido").value = Personas.apellido;
-    document.getElementById("Consultas").value = Personas.consultas;
+    Inputinit.value = Personas.nombres;
+    Apellido.value = Personas.apellido;
+    Consutas.value = Personas.consultas;
+    imagenes.value = Personas.Imagen;
   };
-
-//  function reInprimir() {
-//    Datos =
-//      Personas.nombres +
-//      "<br/>" +
-//      Personas.apellido +
-//      "<br/>" +
-//      Personas.consultas +
-//      "<br/>" +
-//      Personas.id;
-//     document.getElementById("Cliente").innerHTML = "<H1>Estos son tus datos</H1>" + Datos;
-//  };
-//  return Personas.Identificador
 };
 
 
@@ -86,29 +95,36 @@ function reEditarDatos() {
     nombres: Usuario[Constante].nombres = Usuario[Constante].nombres,
     apellido: Buscar().apellido  = Usuario[Constante].apellido,
     consultas: Buscar().consultas  = Usuario[Constante].consultas,
-    id: Buscar().id  = Usuario[Constante].id
+    id: Buscar().id  = Usuario[Constante].id,
+    Imagen: Buscar().Imagen = Usuario[Constante].Imagen
   })
-  return
-}
+};
+
 //---------------------------------------------------------------------------------Buscador
 
 function DatosUsuarios() {
-  var Inputinit = document.getElementById("Nombres");
   soloNombre = Inputinit.value;
-  var Apellido = document.getElementById("Apellido");
   soloApellido = Apellido.value;
-  var Consutas = document.getElementById("Consultas");
+  soloImagen = imagenes.value;
+  soloDia = dia.value;
   soloConsultas = Consutas.value;
-  var Id = //document.getElementById("Id");
-    //soloid = Id.value;
+  soloContra = Contraseña.value;
+  soloMes = mes.value;
+  soloEmail = Correito.value;
 
     (soloNombre = Usuario.push({
       nombres: soloNombre,
       apellido: soloApellido,
+      Imagen: soloImagen,
+      email: soloEmail,
+      Pass: soloContra,
+      dia: soloDia,
+      Mes: soloMes,
       consultas: soloConsultas,
+      Identificador: cantidadUsuario,
       id: azares(),
-      Identificador: Usuario.length
     }));
+
   ImprimirDatos();
 }
 
@@ -119,16 +135,16 @@ function ImprimirDatos() {
   if (valorUsuario) {
     var Constante = valorUsuario.Identificador;
     Datos =
-    Usuario[Constante].nombres +
+    "<spam>Nombre:</spam>" + Usuario[Constante].nombres +
     "<br/>" +
-    Usuario[Constante].apellido +
+    "<spam>Apellido:</spam>" + Usuario[Constante].apellido +
     "<br/>" +
-    Usuario[Constante].consultas +
+    "<spam>Consultas:</spam>" + Usuario[Constante].consultas +
     "<br/>" +
-    Usuario[Constante].id;
-    document.getElementById("Cliente").innerHTML = "<H1>Tus Datos.</H1>" + Datos;
+    "<spam>Codigo Secreto:</spam>" + Usuario[Constante].id
+    etiquetaPos.innerHTML = "<H1>Cargados:</H1>" + Datos;
   } else {
-    document.getElementById("Cliente").innerHTML = "<H1>Se ha guardado tu usuario ✔</H1>";
+    etiquetaPos.innerHTML = "<spam>Se ha guardado tu usuario ✔</spam>";
   }
   
 }
@@ -136,15 +152,15 @@ function ImprimirDatos() {
 function Renombrar() {
   const valorUsuario = Usuario.find(Encontrado => Encontrado.id == valor.value);
   var Constante = valorUsuario.Identificador;
-  Usuario[Constante].nombres = document.getElementById("Nombres").value;
-  Usuario[Constante].apellido = document.getElementById("Apellido").value;
-  Usuario[Constante].consultas = document.getElementById("Consultas").value;
-//  ImprimirDatos();
+  Usuario[Constante].nombres = Inputinit.value;
+  Usuario[Constante].apellido = Apellido.value;
+  Usuario[Constante].consultas = Consutas.value;
+  Usuario[Constante].Pass = Contraseña.value;
+  Usuario[Constante].email = Correito.value;
+  Usuario[Constante].Mes = mes.value;
+  Usuario[Constante].dia = dia.value;
+  ImprimirDatos();
 }
-
-var EtiquetaP = {};
-var Etiquetas = "Nombres";
-document.getElementById("Cliente").innerHTML = "<H1>Datos:</H1>" + Etiquetas;
 
 // Imprime el nombre de un arrays
 
@@ -153,8 +169,7 @@ document.getElementById("Cliente").innerHTML = "<H1>Datos:</H1>" + Etiquetas;
 var Prueba = ["¿Hace tu pregunta?",];
 
 function Actualizar() {
-  var Inputinit = document.getElementById("OnclickVacio");
-  const info = Inputinit.value;
+  const info = Tocador.value;
   let numerossumados = Prueba.length; 
   valoresfinaes = Prueba.push({
     mensaje: info,
@@ -165,14 +180,6 @@ function Actualizar() {
 };
 
 document.getElementById("Actualizar").innerHTML = Prueba; 
-
-
-const button = document.getElementById("Guardando");
-button.addEventListener('click', () => {
-  var users = Usuario.length;
-  const exportarid = "<p>" + "Codigo se Seguridad:" + Usuario[users - 1].id + "</p>" ;
-  document.getElementById("Seguridad:").innerHTML = exportarid;
-});
 
 // imprime actualizacion
 //La idea hacer un chat bots pero tambien la consulta
