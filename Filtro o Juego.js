@@ -58,14 +58,14 @@ etiquetaPos.innerHTML = "<H1>Informacón personal:</H1>" + Etiquetas; //Iniciali
 
 function azares() {
   var numeroUsuario = cantidadUsuario;
-  var azar = Math.random() * 10000000000000;
+  var azar = Math.random() * 1000000000;
   var redondeo = Math.floor(azar)
   let numeros = numeroUsuario * redondeo;
   return numeros
 }
 
 button.addEventListener('click', () => {
-  const exportarid = "<p>"+"Codigo se Seguridad:"+Usuario[Usuario.length - 1].id+"</p>";
+  const exportarid = "<p>"+"Codigo se Seguridad:" +Usuario[Usuario.length - 1].id+"</p>";
   codigoSeg.innerHTML = exportarid;
 });
 
@@ -75,17 +75,25 @@ button.addEventListener('click', () => {
 function Buscar() {
   var Personas = Usuario.find(Encontrado => Encontrado.id == valor.value);
     if (Personas) {
-      pushDatos()
+      pushDatos();
+      document.querySelector('.FormulariosidBusqueda').style.visibility = 'hidden';
+      document.querySelector('#Guardando').style.display = 'none';
+      document.querySelector('#Guardando').style.display = 'none';
     }
     else {
       console.log("Usuario no encontrado");
+      document.querySelector('#error').style.background = '#ff520029';
     }
 
   function pushDatos() {
     Inputinit.value = Personas.nombres;
     Apellido.value = Personas.apellido;
     Consutas.value = Personas.consultas;
+    Correito.value = Personas.email;
+    mes.valor = Personas.Mes;
     imagenes.value = Personas.Imagen;
+    dia.value = Personas.dia;
+    imagenes.value = Personas.Imagen
   };
 };
 
