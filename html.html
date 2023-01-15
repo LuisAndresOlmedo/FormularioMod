@@ -9,15 +9,15 @@
   </head>
   <body >
     <div class="FormulariosidBusqueda">
-      <img src="" alt="" width="400px" id="ImagenPerfil" srcset="">
-      <form id="error">
+      <img src="" alt="" width="100px" id="ImagenPerfil" srcset="">
+      <form class="error" id="error">
         <h3>Codigo Seguridad</h3>
         <input type="text" value="Busqueda" id="Busqueda"/><br />
         <input type="button" value="Buscar" id="botoncito" onclick="Buscar()"/>
       </form>
     </div>
     <form id="email">
-      <div>
+      <div class="Separando">
         <h3>Completa formulario</h3>
         <input type="text" id="Nombres" value="Nombre"><br />
         <input type="text" id="Apellido" value="Apellido"/><br />
@@ -42,6 +42,42 @@
         <input type="button" value="Consultar" onclick="Actualizar()" />
         <p id="Actualizar"></p>
       </form>
+      <table id="miTabla">
+        <thead>
+          <tr>
+            <th>Nombres</th>
+            <th>Apellido</th>
+            <th>Consultas</th>
+            <th>Correos</th>
+            <th>contraseñas</th>
+            <th>ID</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr> 
+        </tbody>
+        <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" />
+      </table>
     </div>
     <script src="./Filtro o Juego.js"></script>
   </body>
