@@ -1,9 +1,12 @@
 .error {
   max-width: 400px;
   display: block;
-  visibility: hidden;
+}
+#rembrar2 {
+  display: none;
 }
 .Separando {
+  display: none;
   margin: 0 30px 0 0px;
 }
 body {
@@ -18,6 +21,9 @@ form {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#email {
   display: flex;
 }
 
@@ -98,4 +104,27 @@ input:focus {
   top: 0px;
   transition: 1.2s;
   visibility: visible;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+summary {
+  transition: height 1s ease-in-out;
+  color: rgb(0, 0, 0);
+  height: 30px;
+  border: 1px solid rgba(0, 0, 255, 0.32);
+  align-items: center;
+}
+details[open] summary {
+  background-color: rgba(0, 159, 58, 0.2);
+}
+summary:hover {
+  background-color: rgba(18, 21, 123, 0.459);
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+  align-items: center;
 }

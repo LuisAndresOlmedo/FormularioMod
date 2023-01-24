@@ -11,9 +11,10 @@ var Contraseña = document.getElementById("contraseña");
 var dia = document.getElementById("numeroDeFecha");
 var mes = document.getElementById("fechaNacimiento");
 var Correito = document.getElementById("Correo");
+var botoncito = document.getElementById("botoncito");
 let EtiquetaP = {};
 var Etiquetas = "Se cargaran los datos";
-imagenes.src = "./I/Usuario.png";
+imagenes.src = "./I/Avatar.png";
 document.querySelector(".error").style.visibility = "visible";
 
 let Usuario = [
@@ -21,10 +22,10 @@ let Usuario = [
     nombres: "Luis Andres",
     apellido: "Olmedo",
     consultas: "¿Reparaciones?",
-    Imagen: "./I/Usuario.png",
-    Mes: "2022-07",
+    Imagen: "./I/Avatar.png",
+    Mes: "2000-09",
     Pass: "1234567",
-    dia: "12",
+    dia: "13",
     email: "olmedoluisandres@gmial.com",
     id: 8000,
     Identificador: 0,
@@ -33,7 +34,7 @@ let Usuario = [
     nombres: "Juan",
     apellido: "Carlos",
     consultas: "¿Reparaciones?",
-    Imagen: "./I/Usuario.png",
+    Imagen: "./I/Usuario 2.png",
     Mes: "2022-07",
     Pass: "1234567",
     dia: "12",
@@ -45,7 +46,7 @@ let Usuario = [
     nombres: "Jose",
     apellido: "Montenegro",
     consultas: "¿Reparaciones?",
-    Imagen: "./I/Usuario.png",
+    Imagen: "./I/6773873.png",
     Mes: "2022-07",
     Pass: "1234567",
     dia: "12",
@@ -57,7 +58,7 @@ let Usuario = [
     nombres: "Leo",
     apellido: "Villalva",
     consultas: "¿Reparaciones?",
-    Imagen: ".I/Usuario.png",
+    Imagen: ".I/3135823.png",
     Mes: "2022-07",
     Pass: "1234567",
     dia: "12",
@@ -69,7 +70,7 @@ let Usuario = [
     nombres: "Fernando",
     apellido: "Flores",
     consultas: "¿Reparaciones?",
-    Imagen: "./I/Usuario.png",
+    Imagen: "./I/3135768.png",
     Mes: "2022-07",
     Pass: "1234567",
     dia: "12",
@@ -103,8 +104,7 @@ function Buscar() {
   var Personas = Usuario.find((Encontrado) => Encontrado.id == valor.value);
   if (Personas) {
     pushDatos();
-    document.querySelector(".FormulariosidBusqueda").style.visibility =
-      "hidden";
+    document.querySelector("#error").style.display = "none";
     document.querySelector("#Guardando").style.display = "none";
     document.querySelector("#Guardando").style.display = "none";
   } else {
@@ -208,88 +208,3 @@ function Renombrar() {
 }
 
 // Imprime el nombre de un arrays
-
-var Prueba = ["¿Hace tu pregunta?"];
-
-function Actualizar() {
-  const info = Tocador.value;
-  let numerossumados = Prueba.length;
-  valoresfinaes = Prueba.push({
-    mensaje: info,
-    N: Prueba.length,
-  });
-  const ImprimirD = "<tr>" + Prueba[numerossumados].mensaje + "</tr>" + "<br/>";
-  document.getElementById("table").innerHTML = ImprimirD;
-}
-
-document.getElementById("Actualizar").innerHTML = Prueba;
-
-//La idea hacer un chat bots pero tambien la consulta, imprime actualizacion.
-
-var columna = document.getElementById("miTabla");
-var columnaId = 0;
-var columnaR = 0;
-
-function numerosMas() {
-  for (let i = 0; i <= Usuario.length - 1; i++) {
-    columnaR++;
-    console.log(columnaR);
-    tablas();
-    tablas2();
-    tablas3();
-    tablas4();
-    tablas5();
-    tablas6();
-    tablas7();
-  }
-  return columnaR
-}
-
-function tablas() {
-  var row = columna.rows[columnaR];
-  var tablita = document.createElement("td");
-  tablita.appendChild(document.createTextNode(Usuario[columnaR].nombres));
-  row.appendChild(tablita);
-}
-
-function tablas2() {
-  var row = columna.rows[columnaR];
-  var tablita = document.createElement("td");
-  tablita.appendChild(document.createTextNode(Usuario[columnaR].apellido));
-  row.appendChild(tablita);
-}
-
-function tablas3() {
-  var row = columna.rows[columnaR];
-  var tablita = document.createElement("td");
-  tablita.appendChild(document.createTextNode(Usuario[columnaR].consultas));
-  row.appendChild(tablita);
-}
-
-function tablas4() {
-  var row = columna.rows[columnaR];
-  var tablita = document.createElement("td");
-  tablita.appendChild(document.createTextNode(Usuario[columnaR].email));
-  row.appendChild(tablita);
-}
-
-function tablas5() {
-  var row = columna.rows[columnaR];
-  var tablita = document.createElement("td");
-  tablita.appendChild(document.createTextNode(Usuario[columnaR].Pass));
-  row.appendChild(tablita);
-}
-
-function tablas6() {
-  var row = columna.rows[columnaR];
-  var tablita = document.createElement("td");
-  tablita.appendChild(document.createTextNode(Usuario[columnaR].id));
-  row.appendChild(tablita);
-}
-
-function tablas7() {
-  var row = columna.rows[columnaR];
-  var tablita = document.createElement("td");
-  tablita.appendChild(document.createTextNode(Usuario[columnaR].Mes));
-  row.appendChild(tablita);
-}

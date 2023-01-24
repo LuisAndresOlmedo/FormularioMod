@@ -4,43 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Estilo.css">
+    <link rel="stylesheet" href="Estilo.css" />
     <title>Formularios ✅</title>
   </head>
-  <body >
+  <body>
+    <header height="100px">
+      <menu>
+        <p>⫽⫻</p>
+      </menu>
+      <div class="flex">
+        <input type="button" id="rembrar" width="30px" value="Registrate" onclick="Registrarse()" />
+        <input type="button" id="rembrar2" width="30px" value="atras" onclick="" />
+        <input type="button" value="Iniciar Seccion" onclick="buscandoANemo()" />
+        <img src="" alt="" height="50px" id="ImagenPerfil" srcset="" />
+      </div>
+    </header>
     <div class="FormulariosidBusqueda">
-      <img src="" alt="" width="100px" id="ImagenPerfil" srcset="">
       <form class="error" id="error">
         <h3>Codigo Seguridad</h3>
-        <input type="text" value="Busqueda" id="Busqueda"/><br />
-        <input type="button" value="Buscar" id="botoncito" onclick="Buscar()"/>
+        <input type="text" value="Busqueda" id="Busqueda" /><br />
+        <input type="button" value="Buscar" id="botoncito" onclick="Buscar()" />
       </form>
     </div>
     <form id="email">
-      <div class="Separando">
+      <div id="registros" class="Separando">
         <h3>Completa formulario</h3>
-        <input type="text" id="Nombres" value="Nombre"><br />
-        <input type="text" id="Apellido" value="Apellido"/><br />
-        <input type="text" id="Consultas" value="@instagram"/><br />
-        <input type="email" name="email" value="Email" id="Correo">
-        <input type="password" class="pass" id="contraseña" value="Constraseña"/><br /><br/>
-        <input type="month" class="Mes" value="2022-12" id="fechaNacimiento" /><input type="number" value="00" class="dia" id="numeroDeFecha" /><br />
-        <input type="file" class="Cargarimagen" src="https://e7.pngegg.com/pngimages/106/775/png-clipart-loupe-loupe.png" id="ImagenPerfil" name="image">
+        <input type="text" id="Nombres" value="Nombre" /><br />
+        <input type="text" id="Apellido" value="Apellido" /><br />
+        <input type="text" id="Consultas" value="@instagram" /><br />
+        <input type="email" name="email" value="Email" id="Correo" />
+        <input type="password" class="pass" id="contraseña" value="Constraseña"/>
+        <br />
+        <input type="month" class="Mes" value="2022-12" id="fechaNacimiento"/>
+        <input type="number" value="00" class="dia" id="numeroDeFecha"/>
+        <br />
+        <input type="file" class="Cargarimagen" src="https://e7.pngegg.com/pngimages/106/775/png-clipart-loupe-loupe.png" id="ImagenPerfil" name="image"/>
         <p id="Seguridad:"></p>
-        <input type="button" value="Guardar" id="Guardando" onclick="DatosUsuarios()" />
+        <input type="button" value="Guardar" id="Guardando" onclick="DatosUsuarios()"/>
         <input type="button" value="Renombrar" onclick="Renombrar()" />
       </div>
       <div>
         <h3 id="Cliente"></h3>
       </div>
     </form>
-    <hr style="border: 1px solid #ccc;">
+    <hr style="border: 1px solid #ccc" />
     <div>
       <form>
-        <table id="table"></table>
+        <p id="Actualizar"></p><br />
         <input type="text" id="OnclickVacio" /><br />
         <input type="button" value="Consultar" onclick="Actualizar()" />
-        <p id="Actualizar"></p>
+        <h4 id="textoBot"></h4>
       </form>
       <table id="miTabla">
         <thead>
@@ -55,30 +68,23 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-          </tr>
-          <tr>
-          </tr>
-          <tr>
-          </tr>
-          <tr>
-          </tr>
-          <tr>
-          </tr>
-          <tr>
-          </tr>
-          <tr>
-          </tr>
-          <tr>
-          </tr>
-          <tr>
-          </tr>
-          <tr>
-          </tr> 
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
         </tbody>
         <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" />
       </table>
     </div>
     <script src="./Filtro o Juego.js"></script>
+    <script src="./Tabla.js"></script>
+    <script src="./Registrarse.js"></script>
+    <script src="./chatbot.js"></script>
   </body>
 </html>
