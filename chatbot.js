@@ -1,3 +1,5 @@
+const Tocador = document.getElementById("OnclickVacio");
+
 function Actualizar() { //genera un chat o algo parecido
     const info = Tocador.value;
     let numerossumados = Prueba.length;

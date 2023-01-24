@@ -2,7 +2,6 @@ let valor = document.getElementById("Busqueda");
 const button = document.getElementById("Guardando");
 const codigoSeg = document.getElementById("Seguridad:");
 const etiquetaPos = document.getElementById("Cliente");
-const Tocador = document.getElementById("OnclickVacio");
 var imagenes = document.getElementById("ImagenPerfil");
 var Consutas = document.getElementById("Consultas");
 var Apellido = document.getElementById("Apellido");
@@ -104,7 +103,9 @@ function Buscar() {
   var Personas = Usuario.find((Encontrado) => Encontrado.id == valor.value);
   if (Personas) {
     pushDatos();
-    document.querySelector("#error").style.display = "none";
+    setTimeout(() => {
+      document.querySelector("#error").style.display = "none";
+    }, 1000);
     document.querySelector("#Guardando").style.display = "none";
     document.querySelector("#Guardando").style.display = "none";
   } else {
