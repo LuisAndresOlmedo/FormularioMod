@@ -1,6 +1,7 @@
 var columna = document.getElementById("miTabla");
 var columnaId = 0;
 var columnaR = 0;
+let corona = document.querySelector("#miTabla").style.visibility = "visible";
 
 function numerosMas() {
     for (let i = 1; i <= Usuario.length - 1; i++) {

@@ -1,4 +1,8 @@
 let valor = document.getElementById("Busqueda");
+let vCorreo = document.getElementById("bCorreo");
+let vPass = document.getElementById("bPass");
+
+
 const button = document.getElementById("Guardando");
 const codigoSeg = document.getElementById("Seguridad:");
 const etiquetaPos = document.getElementById("Cliente");
@@ -21,9 +25,9 @@ let Usuario = [
     nombres: "Luis Andres",
     apellido: "Olmedo",
     consultas: "¿Reparaciones?",
-    Imagen: "./I/Avatar.png",
+    Imagen: "./I/Usuario.png",
     Mes: "2000-09",
-    Pass: "1234567",
+    Pass: "AdministradoresDeEmpresas2000",
     dia: "13",
     email: "olmedoluisandres@gmial.com",
     id: 8000,
@@ -35,7 +39,7 @@ let Usuario = [
     consultas: "¿Reparaciones?",
     Imagen: "./I/Usuario 2.png",
     Mes: "2022-07",
-    Pass: "1234567",
+    Pass: "JuanGuarnizoesPuto",
     dia: "12",
     email: "juancarlos@gmial.com",
     id: 36,
@@ -45,7 +49,7 @@ let Usuario = [
     nombres: "Jose",
     apellido: "Montenegro",
     consultas: "¿Reparaciones?",
-    Imagen: "./I/6773873.png",
+    Imagen: "./I/usuarios (1).png",
     Mes: "2022-07",
     Pass: "1234567",
     dia: "12",
@@ -57,7 +61,7 @@ let Usuario = [
     nombres: "Leo",
     apellido: "Villalva",
     consultas: "¿Reparaciones?",
-    Imagen: ".I/3135823.png",
+    Imagen: "./I/usuarios (2).png",
     Mes: "2022-07",
     Pass: "1234567",
     dia: "12",
@@ -69,7 +73,7 @@ let Usuario = [
     nombres: "Fernando",
     apellido: "Flores",
     consultas: "¿Reparaciones?",
-    Imagen: "./I/3135768.png",
+    Imagen: "./I/usuarios (3).png",
     Mes: "2022-07",
     Pass: "1234567",
     dia: "12",
@@ -97,28 +101,39 @@ button.addEventListener("click", () => {
   codigoSeg.innerHTML = exportarid;
 });
 
-//---------------------------------------------------------------------------------Buscador
 
+//---------------------------------------------------------------------------------Buscador
 function Buscar() {
   var Personas = Usuario.find((Encontrado) => Encontrado.id == valor.value);
-  if (Personas) {
-    pushDatos();
-    setTimeout(() => {
-      document.querySelector("#error").style.display = "none";
-    }, 1000);
-    document.querySelector("#Guardando").style.display = "none";
-    document.querySelector("#Guardando").style.display = "none";
+  let varificadorEmail = Usuario.find((E) => E.email == vCorreo.value);
+  let varificadorpass = Usuario.find((E) => E.Pass == vPass.value);
+
+  if (varificadorEmail == varificadorpass) {
+    if (Personas == varificadorEmail) {
+        pushDatos();
+        setTimeout(() => {
+          document.querySelector("#error").style.display = "none";
+        }, 1000);
+        document.querySelector("#Guardando").style.display = "none";
+        document.querySelector("#Guardando").style.display = "none";
+    } else {
+      document.querySelector("#error").style.background = "rgb(241 137 137)";
+      alert("Verifica si colocaste bien la contraseña/correo o codigo de verificación");
+    }
   } else {
-    console.log("Usuario no encontrado");
     document.querySelector("#error").style.background = "rgb(241 137 137)";
+    alert("Verifica si colocaste bien la contraseña/correo o codigo de verificación");
   }
+
+  //let validador =
+
 
   function pushDatos() {
     Inputinit.value = Personas.nombres;
     Apellido.value = Personas.apellido;
     Consutas.value = Personas.consultas;
     Correito.value = Personas.email;
-    mes.valor = Personas.Mes;
+    mes.value = Personas.Mes;
     imagenes.value = Personas.Imagen;
     dia.value = Personas.dia;
     imagenes.src = Personas.Imagen;
