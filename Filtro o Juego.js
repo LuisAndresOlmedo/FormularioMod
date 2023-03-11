@@ -10,11 +10,6 @@ selector.addEventListener("change", function() {
   console.log("La opción seleccionada actualmente es: " + seleccionActual);
 });
 
-
-let cambio_prueba =0;
-let cambio_prueba =0;let cambio_prueba =0;let cambio_prueba =0;let cambio_prueba =0;
-
-
 const button = document.getElementById("Guardando");
 const codigoSeg = document.getElementById("Seguridad:");
 const etiquetaPos = document.getElementById("Cliente");
