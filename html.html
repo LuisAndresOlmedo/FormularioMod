@@ -10,16 +10,15 @@
   <body>
     <header height="100px">
       <menu>
-        <p>⫽⫻</p>
       </menu>
       <div class="flex">
         <input type="button" id="rembrar" width="30px" value="Registrate" onclick="Registrarse()" />
-        <input type="button" id="rembrar2" width="30px" value="inicio" />
+        <input type="button" width="30px" value="inicio" onclick="iniciarF()" />
         <input type="button" value="Iniciar Seccion" onclick="buscandoANemo()" />
         <img src="" alt="" height="50px" id="ImagenPerfil" srcset="" />
       </div>
     </header>
-    <div class="FormulariosidBusqueda">
+    <div class="FormulariosidBusqueda" id="formulario">
       <form class="error" id="error">
         <h3>Codigo Seguridad</h3>
         <input type="text" value="Email" id="bCorreo" /><br />
@@ -40,6 +39,12 @@
         <input type="month" class="Mes" value="2022-12" id="fechaNacimiento"/>
         <input type="number" value="00" class="dia" id="numeroDeFecha"/>
         <br />
+        <select name="" id="selectorDeVariables">
+          <option value="Default">FEMENINO</option>
+          <option value="ID">MASCULINO</option>
+          <option value="Micado">TUERCO</option>
+          <option value="Recibido">CORNUDO</option>
+        </select>
         <input type="file" class="Cargarimagen" src="https://e7.pngegg.com/pngimages/106/775/png-clipart-loupe-loupe.png" id="ImagenPerfil" name="image"/>
         <p id="Seguridad:"></p>
         <input type="button" value="Guardar" id="Guardando" onclick="DatosUsuarios()"/>
@@ -71,17 +76,15 @@
         </thead>
         <tbody>
           <tr></tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
         </tbody>
-        <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" />
+        <div>
+          <div>
+            <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" />
+          </div>
+          <div>
+            <input type="image" id="Recargar_datos" src="" height="20px" width="20px" alt="">
+          </div>
+        </div>
       </table>
     </div>
     <script src="./Filtro o Juego.js"></script>

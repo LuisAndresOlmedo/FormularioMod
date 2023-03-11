@@ -7,7 +7,11 @@ function Actualizar() { //genera un chat o algo parecido
       mensaje: info,
       N: Prueba.length,
     });
-    let ImprimirD = "<p>" + Prueba[numerossumados].mensaje + "</p>" + "<br/>";
+    const contenido = {
+      contenido: info,
+      nuevo:0,};
+    console.log(contenido);
+    let ImprimirD = "<p>" + Prueba[numerossumados].mensaje + "</p>" + contenido.nuevo + "<br/>";
     document.getElementById("textoBot").innerHTML = ImprimirD;
   }
   

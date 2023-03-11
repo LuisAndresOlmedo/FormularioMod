@@ -19,6 +19,8 @@ function numerosMas() {
   
   function tablas() {
     var row = columna.rows[columnaR];
+    var creartr = document.createElement("tr");
+    columna.appendChild(creartr);
     var tablita = document.createElement("td");
     tablita.appendChild(document.createTextNode(Usuario[columnaR].nombres));
     row.appendChild(tablita);
@@ -26,6 +28,8 @@ function numerosMas() {
   
   function tablas2() {
     var row = columna.rows[columnaR];
+    var creartr = document.createElement("tr");
+    columna.appendChild(creartr);
     var tablita = document.createElement("td");
     tablita.appendChild(document.createTextNode(Usuario[columnaR].apellido));
     row.appendChild(tablita);
@@ -33,6 +37,8 @@ function numerosMas() {
   
   function tablas3() {
     var row = columna.rows[columnaR];
+    var creartr = document.createElement("tr");
+    columna.appendChild(creartr);
     var tablita = document.createElement("td");
     tablita.appendChild(document.createTextNode(Usuario[columnaR].consultas));
     row.appendChild(tablita);
@@ -40,6 +46,8 @@ function numerosMas() {
   
   function tablas4() {
     var row = columna.rows[columnaR];
+    var creartr = document.createElement("tr");
+    columna.appendChild(creartr);
     var tablita = document.createElement("td");
     tablita.appendChild(document.createTextNode(Usuario[columnaR].email));
     row.appendChild(tablita);
@@ -47,6 +55,8 @@ function numerosMas() {
   
   function tablas5() {
     var row = columna.rows[columnaR];
+    var nuevaFila = document.createElement("tr");
+    columna.appendChild(nuevaFila);
     var tablita = document.createElement("td");
     tablita.appendChild(document.createTextNode(Usuario[columnaR].Pass));
     row.appendChild(tablita);
@@ -54,6 +64,8 @@ function numerosMas() {
   
   function tablas6() {
     var row = columna.rows[columnaR];
+    var creartr = document.createElement("tr");
+    columna.appendChild(creartr);
     var tablita = document.createElement("td");
     tablita.appendChild(document.createTextNode(Usuario[columnaR].id));
     row.appendChild(tablita);
@@ -61,6 +73,8 @@ function numerosMas() {
   
   function tablas7() {
     var row = columna.rows[columnaR];
+    var creartr = document.createElement("tr");
+    columna.appendChild(creartr);
     var tablita = document.createElement("td");
     tablita.appendChild(document.createTextNode(Usuario[columnaR].Mes));
     row.appendChild(tablita);

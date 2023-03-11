@@ -1,6 +1,18 @@
 let valor = document.getElementById("Busqueda");
 let vCorreo = document.getElementById("bCorreo");
 let vPass = document.getElementById("bPass");
+let iniciar = document.getElementById("formulario");
+let selector = document.getElementById("selectorDeVariables");
+
+
+selector.addEventListener("change", function() {
+  var seleccionActual = selector.value;
+  console.log("La opción seleccionada actualmente es: " + seleccionActual);
+});
+
+
+let cambio_prueba =0;
+let cambio_prueba =0;let cambio_prueba =0;let cambio_prueba =0;let cambio_prueba =0;
 
 
 const button = document.getElementById("Guardando");
@@ -16,7 +28,7 @@ var mes = document.getElementById("fechaNacimiento");
 var Correito = document.getElementById("Correo");
 var botoncito = document.getElementById("botoncito");
 let EtiquetaP = {};
-var Etiquetas = "Se cargaran los datos";
+var Etiquetas = "<h5>Se cargaran los datos</h5>";
 imagenes.src = "./I/Avatar.png";
 document.querySelector(".error").style.visibility = "visible";
 
@@ -83,13 +95,32 @@ let Usuario = [
   },
 ];
 
+function iniciarF() {
+  let none = document.querySelector("#formulario").style.display = "none";
+  let block = document.querySelector("#formulario").style.display = "block";
+  switch (iniciar) {
+    case block:
+      none;
+      console.log("Principio");
+      break;
+    case none:
+      block;
+      console.log("Medui");
+      break;
+    default:
+      none;
+      console.log("Final");
+      break;
+  }
+}
+
 let cantidadUsuario = Usuario.length;
 
-etiquetaPos.innerHTML = "<H1>Informacón personal:</H1>" + Etiquetas; //Inicializacion de Elemento.
+etiquetaPos.innerHTML = "<H3>Informacón personal:</H3>" + Etiquetas; //Inicializacion de Elemento.
 
 function azares() {
   var numeroUsuario = cantidadUsuario;
-  var azar = Math.random() * 1000000000;
+  var azar = Math.random() * 100000;
   var redondeo = Math.floor(azar);
   let numeros = numeroUsuario * redondeo;
   return numeros;
@@ -102,11 +133,13 @@ button.addEventListener("click", () => {
 });
 
 
+
 //---------------------------------------------------------------------------------Buscador
 function Buscar() {
   var Personas = Usuario.find((Encontrado) => Encontrado.id == valor.value);
   let varificadorEmail = Usuario.find((E) => E.email == vCorreo.value);
   let varificadorpass = Usuario.find((E) => E.Pass == vPass.value);
+
 
   if (varificadorEmail == varificadorpass) {
     if (Personas == varificadorEmail) {
@@ -118,15 +151,10 @@ function Buscar() {
         document.querySelector("#Guardando").style.display = "none";
     } else {
       document.querySelector("#error").style.background = "rgb(241 137 137)";
-      alert("Verifica si colocaste bien la contraseña/correo o codigo de verificación");
     }
   } else {
     document.querySelector("#error").style.background = "rgb(241 137 137)";
-    alert("Verifica si colocaste bien la contraseña/correo o codigo de verificación");
   }
-
-  //let validador =
-
 
   function pushDatos() {
     Inputinit.value = Personas.nombres;
