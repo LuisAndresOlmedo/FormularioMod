@@ -17,10 +17,11 @@ var mes = document.getElementById("fechaNacimiento");
 var Correito = document.getElementById("Correo");
 var botoncito = document.getElementById("botoncito");
 let EtiquetaP = {};
-var Etiquetas = "<h5>Se cargaran los datos</h5>";
+var Etiquetas = "<h5>Tus datos:</h5>";
 imagenes.src = "./I/Avatar.png";
 document.querySelector(".error").style.display = "none";
-
+document.querySelector(".inciar_seccion").style.display = "block";
+let cambios_de_valores = document.getElementById("Cambio");
 
 selector.addEventListener("change", function() {
   var seleccionActual = selector.value;
@@ -90,28 +91,9 @@ let Usuario = [
   },
 ];
 
-function iniciarF() {
-  let none = document.querySelector("#formulario").style.display = "none";
-  let block = document.querySelector("#formulario").style.display = "block";
-  switch (iniciar) {
-    case block:
-      none;
-      console.log("Principio");
-      break;
-    case none:
-      block;
-      console.log("Medui");
-      break;
-    default:
-      none;
-      console.log("Final");
-      break;
-  }
-}
-
 let cantidadUsuario = Usuario.length;
 
-etiquetaPos.innerHTML = "<H3>Informacón personal:</H3>" + Etiquetas; //Inicializacion de Elemento.
+etiquetaPos.innerHTML = "<H3>Info:</H3>" + Etiquetas; //Inicializacion de Elemento.
 
 function azares() {
   var numeroUsuario = cantidadUsuario;
@@ -141,6 +123,8 @@ function Buscar() {
         pushDatos();
         setTimeout(() => {
           document.querySelector("#error").style.display = "none";
+          document.querySelector(".inciar_seccion").style.display = "none";
+          cambios_de_valores.value = "Editar perfil";
         }, 1000);
         document.querySelector("#Guardando").style.display = "none";
         document.querySelector("#Guardando").style.display = "none";

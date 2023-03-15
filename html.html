@@ -12,8 +12,8 @@
       <menu>
       </menu>
       <div class="flex">
-        <input type="button" id="rembrar" width="30px" value="Registrate" onclick="Registrarse()" />
-        <input type="button" value="Iniciar Seccion" onclick="buscandoANemo()" />
+        <input type="button" id="Cambio" width="30px" value="Registrate" onclick="Registrarse()" />
+        <input type="button" class="inciar_seccion" value="Iniciar Seccion" onclick="iniciarSeccion()" />
         <img src="" alt="" height="50px" id="ImagenPerfil" srcset="" />
       </div>
     </header>
@@ -27,6 +27,9 @@
       </form>
     </div>
     <form id="email">
+      <div>
+        <h3 id="Cliente"></h3>
+      </div>
       <div id="registros" class="Separando">
         <h3>Completa formulario</h3>
         <input type="text" id="Nombres" value="Nombre" /><br />
@@ -48,9 +51,6 @@
         <p id="Seguridad:"></p>
         <input type="button" value="Guardar" id="Guardando" onclick="DatosUsuarios()"/>
         <input type="button" value="Renombrar" onclick="Renombrar()" />
-      </div>
-      <div>
-        <h3 id="Cliente"></h3>
       </div>
     </form>
     <hr style="border: 1px solid #ccc" />
