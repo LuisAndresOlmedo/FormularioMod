@@ -12,6 +12,9 @@
 body {
   font-family: sans-serif;
   background-color: #f7f7f7;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 form {
@@ -52,6 +55,9 @@ input[type="button"]:hover {
 table {
   width: 100%;
   border-collapse: collapse;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 th,

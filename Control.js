@@ -17,7 +17,7 @@ var mes = document.getElementById("fechaNacimiento");
 var Correito = document.getElementById("Correo");
 var botoncito = document.getElementById("botoncito");
 let EtiquetaP = {};
-var Etiquetas = "<h5>Tus datos:</h5>";
+var Etiquetas = "<h5>.</h5>";
 imagenes.src = "./I/Avatar.png";
 document.querySelector(".error").style.display = "none";
 document.querySelector(".inciar_seccion").style.display = "block";
@@ -93,7 +93,7 @@ let Usuario = [
 
 let cantidadUsuario = Usuario.length;
 
-etiquetaPos.innerHTML = "<H3>Info:</H3>" + Etiquetas; //Inicializacion de Elemento.
+etiquetaPos.innerHTML = "<H3>....</H3>" + Etiquetas; //Inicializacion de Elemento.
 
 function azares() {
   var numeroUsuario = cantidadUsuario;
