@@ -17,17 +17,17 @@ var mes = document.getElementById("fechaNacimiento");
 var Correito = document.getElementById("Correo");
 var botoncito = document.getElementById("botoncito");
 let EtiquetaP = {};
-var Etiquetas = "<h5>.</h5>";
+var Etiquetas = "<h5></h5>";
 imagenes.src = "./I/Avatar.png";
+document.querySelector("#MunudeUsuario").style.display = "none";
 document.querySelector(".error").style.display = "none";
 document.querySelector(".inciar_seccion").style.display = "block";
 let cambios_de_valores = document.getElementById("Cambio");
 
-selector.addEventListener("change", function() {
+function Estado() {
   var seleccionActual = selector.value;
-  console.log("La opción seleccionada actualmente es: " + seleccionActual);
-});
-
+  console.log(seleccionActual);
+}
 let Usuario = [
   {
     nombres: "Luis Andres",
@@ -47,11 +47,12 @@ let Usuario = [
     consultas: "¿Reparaciones?",
     Imagen: "./I/Usuario 2.png",
     Mes: "2022-07",
-    Pass: "JuanGuarnizoesPuto",
+    Pass: "JuanGuarnizoes1",
     dia: "12",
     email: "juancarlos@gmial.com",
     id: 36,
     Identificador: 1,
+    post1: 0,
   },
   {
     nombres: "Jose",
@@ -91,9 +92,14 @@ let Usuario = [
   },
 ];
 
+document.addEventListener("keydown", function(envento) {
+  console.log(envento);
+});
+
+
 let cantidadUsuario = Usuario.length;
 
-etiquetaPos.innerHTML = "<H3>....</H3>" + Etiquetas; //Inicializacion de Elemento.
+etiquetaPos.innerHTML = Etiquetas; //Inicializacion de Elemento.
 
 function azares() {
   var numeroUsuario = cantidadUsuario;
@@ -109,25 +115,24 @@ button.addEventListener("click", () => {
   codigoSeg.innerHTML = exportarid;
 });
 
-
-
 //---------------------------------------------------------------------------------Buscador
 function Buscar() {
   var Personas = Usuario.find((Encontrado) => Encontrado.id == valor.value);
   let varificadorEmail = Usuario.find((E) => E.email == vCorreo.value);
   let varificadorpass = Usuario.find((E) => E.Pass == vPass.value);
 
-
   if (varificadorEmail == varificadorpass) {
     if (Personas == varificadorEmail) {
-        pushDatos();
-        setTimeout(() => {
-          document.querySelector("#error").style.display = "none";
-          document.querySelector(".inciar_seccion").style.display = "none";
-          cambios_de_valores.value = "Editar perfil";
-        }, 1000);
-        document.querySelector("#Guardando").style.display = "none";
-        document.querySelector("#Guardando").style.display = "none";
+      pushDatos();
+      setTimeout(() => {
+        document.querySelector("#error").style.display = "none";
+        document.querySelector(".inciar_seccion").style.display = "none";
+        cambios_de_valores.value = "Editar perfil";
+        document.querySelector("#Cambio").style.display = "none";
+      }, 1000);
+      document.querySelector("#MunudeUsuario").style.display = "block";
+      document.querySelector("#Guardando").style.display = "none";
+      document.querySelector("#Guardando").style.display = "none";
     } else {
       document.querySelector("#error").style.background = "rgb(241 137 137)";
     }
@@ -211,7 +216,7 @@ function ImprimirDatos() {
       Usuario[Constante].id;
     etiquetaPos.innerHTML = "<H1>Cargados:</H1>" + Datos;
   } else {
-    etiquetaPos.innerHTML = "<spam>Se ha guardado tu usuario ✔</spam>";
+    etiquetaPos.innerHTML = "<h3>Guardado ✅</h3>";
   }
 }
 

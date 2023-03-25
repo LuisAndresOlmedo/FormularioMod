@@ -15,6 +15,20 @@ function Registrarse() {
   }
 };
 
+function mostrarOpciones() {
+  switch (document.querySelector("#Cambio").style.display) {
+    case "block":
+      document.querySelector("#Cambio").style.display = "none";
+      break;
+    case "none":
+      document.querySelector("#Cambio").style.display = "block";
+      break;
+    default:
+      print("No tengo idea");
+      break;
+  }
+}
+
 function iniciarSeccion() {
   switch (document.querySelector(".error").style.display) {
     case "block":
