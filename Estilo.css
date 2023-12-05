@@ -69,12 +69,11 @@ input[type="button"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  margin-bottom: 10px;
   font-size: 16px;
 }
 
 input[type="button"] {
-  background-color: #4caf50;
+  background-color: #a0c224;
   color: #fff;
   cursor: pointer;
 }
@@ -161,5 +160,18 @@ summary:hover {
 }
 .flex {
   display: flex;
-  align-items: center;
+}
+.creartorPost {
+  width: 300px;
+  display: flex;
+}
+.divisorUSU {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+}
+.justos {
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: 300px;
 }

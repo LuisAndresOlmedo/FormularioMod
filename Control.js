@@ -40,6 +40,7 @@ let Usuario = [
     email: "olmedoluisandres@gmial.com",
     id: 8000,
     Identificador: 0,
+    tagName: "@juan",
   },
   {
     nombres: "Juan",
@@ -52,7 +53,7 @@ let Usuario = [
     email: "juancarlos@gmial.com",
     id: 36,
     Identificador: 1,
-    post1: 0,
+    tagName: "@pedro",
   },
   {
     nombres: "Jose",
@@ -65,6 +66,7 @@ let Usuario = [
     email: "josemontenegro@gmial.com",
     id: 15,
     Identificador: 2,
+    tagName: "@Jose",
   },
   {
     nombres: "Leo",
@@ -77,6 +79,7 @@ let Usuario = [
     email: "leonelvillalva@gmial.com",
     id: 10,
     Identificador: 3,
+    tagName: "@Leo",
   },
   {
     nombres: "Fernando",
@@ -89,13 +92,13 @@ let Usuario = [
     email: "fernandoflores@gmial.com",
     id: 9,
     Identificador: 4,
+    tagName: "@Fernando",
   },
 ];
 
-document.addEventListener("keydown", function(envento) {
+document.addEventListener("keydown", function (envento) {
   console.log(envento);
 });
-
 
 let cantidadUsuario = Usuario.length;
 
@@ -129,6 +132,7 @@ function Buscar() {
         document.querySelector(".inciar_seccion").style.display = "none";
         cambios_de_valores.value = "Editar perfil";
         document.querySelector("#Cambio").style.display = "none";
+        document.querySelector("#ImagenPerfil").style.display = "block";
       }, 1000);
       document.querySelector("#MunudeUsuario").style.display = "block";
       document.querySelector("#Guardando").style.display = "none";

@@ -1,4 +1,5 @@
 document.querySelector(".Separando").style.display = "none";
+document.querySelector("#ImagenPerfil").style.display = "none";
 
 function Registrarse() {
   switch (document.querySelector(".Separando").style.display) {
@@ -13,7 +14,7 @@ function Registrarse() {
       console.log("Revisarme");
       break;
   }
-};
+}
 
 function mostrarOpciones() {
   switch (document.querySelector("#Cambio").style.display) {
@@ -42,4 +43,4 @@ function iniciarSeccion() {
       console.log("Revisar inicio");
       break;
   }
-};
+}

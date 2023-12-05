@@ -1,144 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Estilo.css" />
-    <title>Formularios ✅</title>
-  </head>
-  <body>
-    <header height="100px">
-      <menu style="display: flex;  justify-content: space-between;">
-          <input type="search" name="Buscador" id="">
-      </menu>
-      <div class="flex">
-        <input id="MunudeUsuario" onclick="mostrarOpciones()" type="image" src="./I/menu-2.svg" alt="Boton de Menu">
-        <input
-          type="button"
-          id="Cambio"
-          width="30px"
-          value="Registrate"
-          onclick="Registrarse()"
-        />
-        <input
-          type="button"
-          class="inciar_seccion"
-          value="Iniciar Seccion"
-          onclick="iniciarSeccion()"
-        />
-        <img height="45px" id="ImagenPerfil" />
-      </div>
-    </header>
-    <div>
-      <div id="Cliente" class="Contenedores_aparecidos"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Estilo.css" />
+  <title>Formularios ✅</title>
+</head>
+
+<body>
+  <header height="100px">
+    <menu style="display: flex; justify-content: space-between">
+      <input type="search" name="Buscador" id="" />
+    </menu>
+    <div class="flex">
+      <input id="MunudeUsuario" onclick="mostrarOpciones()" type="image" src="./I/menu-2.svg" alt="Boton de Menu" />
+      <input type="button" id="Cambio" width="30px" value="Registrate" onclick="Registrarse()" />
+      <input type="button" class="inciar_seccion" value="Iniciar Seccion" onclick="iniciarSeccion()" />
+      <img height="45px" id="ImagenPerfil" />
     </div>
-    <div class="FormulariosidBusqueda" id="formulario">
-      <form class="error" id="error">
-        <h3>Codigo Seguridad</h3>
-        <input type="text" value="Email" id="bCorreo" /><br />
-        <input type="text" value="Contraseña" id="bPass" /><br />
-        <input type="text" value="Busqueda" id="Busqueda" /><br />
-        <input type="button" value="Buscar" id="botoncito" onclick="Buscar()" />
-      </form>
-    </div>
-    <form id="email">
-      <div id="registros" class="Separando">
-        <h3>Completa formulario</h3>
-        <div style="display: flex; justify-content: space-between">
-          <input type="text" id="Nombres" value="Nombre" />
-          <input
-            style="margin-left: 10px"
-            type="text"
-            id="Apellido"
-            value="Apellido"
-          />
-        </div>
-        <input type="text" id="Consultas" value="@instagram" />
-        <input type="email" name="email" value="Email" id="Correo" />
-        <input
-          type="password"
-          class="pass"
-          id="contraseña"
-          value="Constraseña"
-        />
-        <div style="display: flex; justify-content: space-between">
-          <input
-            type="month"
-            class="Mes"
-            value="2022-12"
-            id="fechaNacimiento"
-          />
-          <input
-            type="number"
-            style="margin-left: 10px"
-            value="00"
-            class="dia"
-            id="numeroDeFecha"
-          />
-        </div>
-        <select name="" onclick="Estado()" id="selectorDeVariables">
-          <option value="FEMENINO">FEMENINO</option>
-          <option value="MASCULINO">MASCULINO</option>
-          <option value="NODEFINED">CORNUDO</option>
-          <option value="Valor">
-            <img src="./I/usuarios (2).png" alt="" />
-          </option>
-        </select>
-        <input
-          type="file"
-          class="Cargarimagen"
-          src="https://e7.pngegg.com/pngimages/106/775/png-clipart-loupe-loupe.png"
-          id="ImagenPerfil"
-          name="image"
-        />
-        <input
-          type="button"
-          value="Guardar"
-          id="Guardando"
-          onclick="DatosUsuarios()"
-        />
-        <input type="button" value="Renombrar" onclick="Renombrar()" />
-      </div>
+  </header>
+  <div>
+    <div id="Cliente" class="Contenedores_aparecidos"></div>
+  </div>
+  <div class="FormulariosidBusqueda" id="formulario">
+    <form class="error" id="error">
+      <h3>Codigo Seguridad</h3>
+      <input type="text" value="Email" id="bCorreo" /><br />
+      <input type="text" value="Contraseña" id="bPass" /><br />
+      <input type="text" value="Busqueda" id="Busqueda" /><br />
+      <input type="button" value="Buscar" id="botoncito" onclick="Buscar()" />
     </form>
-    <input type="text" name="post" id="post">
-    <br>
-    <input type="button" value="Cargar">
-    <hr style="border: 1px solid #ccc" />
-    <div>
-      <table id="miTabla">
-        <thead>
-          <tr>
-            <th>Nombres</th>
-            <th>Apellido</th>
-            <th>Consultas</th>
-            <th>Correos</th>
-            <th>contraseñas</th>
-            <th>ID</th>
-            <th>Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr></tr>
-        </tbody>
-        <div>
-          <div>
-            <input
-              type="button"
-              value="Mostrar Usuarios"
-              onclick="numerosMas()"
-            />
-          </div>
-          <div></div>
-        </div>
-      </table>
+  </div>
+  <form id="email">
+    <div id="registros" class="Separando">
+      <h3>Completa formulario</h3>
+      <div style="display: flex; justify-content: space-between">
+        <input type="text" id="Nombres" value="Nombre" />
+        <input style="margin-left: 10px" type="text" id="Apellido" value="Apellido" />
+      </div>
+      <input type="text" id="Consultas" value="@instagram" />
+      <input type="email" name="email" value="Email" id="Correo" />
+      <input type="password" class="pass" id="contraseña" value="Constraseña" />
+      <div style="display: flex; justify-content: space-between">
+        <input type="month" class="Mes" value="2022-12" id="fechaNacimiento" />
+        <input type="number" style="margin-left: 10px" value="00" class="dia" id="numeroDeFecha" />
+      </div>
+      <select name="" onclick="Estado()" id="selectorDeVariables">
+        <option value="FEMENINO">FEMENINO</option>
+        <option value="MASCULINO">MASCULINO</option>
+        <option value="NODEFINED">CORNUDO</option>
+        <option value="Valor">
+          <img src="./I/usuarios (2).png" alt="" />
+        </option>
+      </select>
+      <input type="file" class="Cargarimagen" src="https://e7.pngegg.com/pngimages/106/775/png-clipart-loupe-loupe.png"
+        id="ImagenPerfil" name="image" />
+      <input type="button" value="Guardar" id="Guardando" onclick="DatosUsuarios()" />
+      <input type="button" value="Renombrar" onclick="Renombrar()" />
     </div>
-    <script src="./Control.js"></script>
-    <script src="./postCreat.js"></script>
-    <script src="./Tabla.js"></script>
-    <script src="./Registrarse.js"></script>
-    <!--    <script src="./chatbot.js"></script> -->
-    <!-- estamos fabricando el chat bot
+  </form>
+  <div>
+    <input type="text" name="post" id="post" />
+    <br />
+    <input type="button" value="Cargar" />
+  </div>
+<div  class="creartorPost">
+  <div id="postAlone"></div>
+</div>
+  <hr style="border: 1px solid #ccc" />
+  <div>
+    <table id="miTabla">
+      <thead>
+        <tr>
+          <th>Nombres</th>
+          <th>Apellido</th>
+          <th>Consultas</th>
+          <th>Correos</th>
+          <th>contraseñas</th>
+          <th>ID</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr></tr>
+      </tbody>
+      <div>
+        <div>
+          <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" />
+        </div>
+        <div></div>
+      </div>
+    </table>
+  </div>
+  <script src="./Control.js"></script>
+  <script src="./postCreat.js"></script>
+  <script src="./Tabla.js"></script>
+  <script src="./Registrarse.js"></script>
+  <!--    <script src="./chatbot.js"></script> -->
+  <!-- estamos fabricando el chat bot
             <form>
             <p id="Actualizar"></p><br />
             <input type="text" id="OnclickVacio" /><br />
@@ -146,5 +107,6 @@
             <h4 id="textoBot"></h4>
           </form>
     -->
-  </body>
+</body>
+
 </html>
