@@ -12,8 +12,8 @@
 .Contenedores_aparecidos {
   border: 1px solid gray;
   border-radius: 15px;
-  transition: 1s;
-  box-shadow: #555;
+  transition: box-shadow 0.5s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #selectorDeVariables:hover {
@@ -30,23 +30,28 @@
   max-width: 400px;
   display: block;
 }
+
 #rembrar2 {
   display: none;
 }
+
 #ImagenPerfil {
   align-items: center;
   padding: 0px 10px;
 }
+
 .Separando {
   display: none;
   margin: 0 30px 0 0px;
 }
+
 body {
   font-family: sans-serif;
   background-color: #f7f7f7;
   max-width: 1024px;
   margin: 0 auto;
   padding: 20px;
+  transition: background-color 0.3s ease;
 }
 
 form {
@@ -63,7 +68,8 @@ form {
 }
 
 input[type="text"],
-input[type="button"] {
+input[type="button"],
+input {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -77,25 +83,25 @@ input[type="button"] {
   background-color: #4caf50;
   color: #fff;
   cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
 }
 
 input[type="button"]:hover {
   background-color: #45a049;
-  transition: background-color 0.2s ease;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   max-width: 1024px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 20px auto;
 }
 
 th,
 td {
   text-align: left;
-  padding: 8px;
+  padding: 12px;
 }
 
 tr:nth-child(even) {
@@ -107,44 +113,22 @@ th {
   color: #fff;
 }
 
-input {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 16px;
-  color: #333;
-}
-
-input.pass {
-  background-color: #f8f8f8;
-}
-
-input.Mes {
-  background-color: #fff;
-}
-
-input.dia {
-  background-color: #fff;
-}
-
-input.Cargarimagen {
-  background-color: #fff;
-}
-
 input:focus {
-  border-color: #aaa;
+  outline: none;
+  border-color: #4caf50;
 }
+
 .FormulariosidBusqueda {
-  transition: 2s;
+  transition: visibility 0.5s ease;
   visibility: visible;
 }
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 summary {
   transition: height 1s ease-in-out;
   color: rgb(0, 0, 0);
@@ -152,13 +136,16 @@ summary {
   border: 1px solid rgba(0, 0, 255, 0.32);
   align-items: center;
 }
+
 details[open] summary {
   background-color: rgba(0, 159, 58, 0.2);
 }
+
 summary:hover {
   background-color: rgba(18, 21, 123, 0.459);
   cursor: pointer;
 }
+
 .flex {
   display: flex;
   align-items: center;
