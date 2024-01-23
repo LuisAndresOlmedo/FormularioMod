@@ -28,6 +28,18 @@ function Estado() {
   var seleccionActual = selector.value;
   console.log(seleccionActual);
 }
+
+const url = fetch("https://fakestoreapi.com/users")
+  .then((res) => res.json())
+  .then((json) => {
+    const usuarios_extras = json.map(({ address, email, id, name, password, phone, username }) => {
+      return { address, email, id, name, password, phone, username };
+    });
+    
+    Usuario.push(...usuarios_extras);
+    return Usuario;
+  });
+
 let Usuario = [
   {
     nombres: "Luis Andres",
@@ -91,6 +103,7 @@ let Usuario = [
     Identificador: 4,
   },
 ];
+
 
 document.addEventListener("keydown", function(envento) {
   console.log(envento);
