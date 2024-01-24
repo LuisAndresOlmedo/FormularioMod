@@ -42,10 +42,6 @@ try {
   });
   console.log("usuarios con exito ✅");
 } catch (error) {
-    var error204 = document.createElement("div");
-    error204.textContent = "Esto es un error fatal";
-    var columna = document.getElementById("Cliente");
-    columna.appendChild(error204);
     console.log("No está pusheando los usuarios");
 }
 
