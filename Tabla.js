@@ -22,7 +22,7 @@ function numerosMas() {
     var creartr = document.createElement("tr");
     columna.appendChild(creartr);
     var tablita = document.createElement("td");
-    tablita.appendChild(document.createTextNode(Usuario[columnaR].nombres));
+    tablita.appendChild(document.createTextNode(Usuario[columnaR].nombres ?? Usuario[columnaR].name.firstname ?? 'No encontrado'));
     row.appendChild(tablita);
   }
   
@@ -31,7 +31,7 @@ function numerosMas() {
     var creartr = document.createElement("tr");
     columna.appendChild(creartr);
     var tablita = document.createElement("td");
-    tablita.appendChild(document.createTextNode(Usuario[columnaR].apellido));
+    tablita.appendChild(document.createTextNode(Usuario[columnaR].apellido ?? Usuario[columnaR].name.lastname));
     row.appendChild(tablita);
   }
   
@@ -40,7 +40,7 @@ function numerosMas() {
     var creartr = document.createElement("tr");
     columna.appendChild(creartr);
     var tablita = document.createElement("td");
-    tablita.appendChild(document.createTextNode(Usuario[columnaR].consultas));
+    tablita.appendChild(document.createTextNode(Usuario[columnaR].consultas ?? "Cargando"));
     row.appendChild(tablita);
   }
   
@@ -58,7 +58,7 @@ function numerosMas() {
     var nuevaFila = document.createElement("tr");
     columna.appendChild(nuevaFila);
     var tablita = document.createElement("td");
-    tablita.appendChild(document.createTextNode(Usuario[columnaR].Pass));
+    tablita.appendChild(document.createTextNode(Usuario[columnaR].Pass ?? Usuario[columnaR].password ?? "No definida"));
     row.appendChild(tablita);
   }
   
@@ -67,7 +67,7 @@ function numerosMas() {
     var creartr = document.createElement("tr");
     columna.appendChild(creartr);
     var tablita = document.createElement("td");
-    tablita.appendChild(document.createTextNode(Usuario[columnaR].id));
+    tablita.appendChild(document.createTextNode(Usuario[columnaR].id ?? Usuario[columnaR].zipcode));
     row.appendChild(tablita);
   }
   
@@ -76,6 +76,6 @@ function numerosMas() {
     var creartr = document.createElement("tr");
     columna.appendChild(creartr);
     var tablita = document.createElement("td");
-    tablita.appendChild(document.createTextNode(Usuario[columnaR].Mes));
+    tablita.appendChild(document.createTextNode(Usuario[columnaR].Mes ?? "Viajero del tiempo"));
     row.appendChild(tablita);
   }

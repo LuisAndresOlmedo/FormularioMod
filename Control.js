@@ -29,7 +29,8 @@ function Estado() {
   console.log(seleccionActual);
 }
 
-const url = fetch("https://fakestoreapi.com/users")
+try {
+  const url = fetch("https://fakestoreapi.com/users")
   .then((res) => res.json())
   .then((json) => {
     const usuarios_extras = json.map(({ address, email, id, name, password, phone, username }) => {
@@ -39,6 +40,14 @@ const url = fetch("https://fakestoreapi.com/users")
     Usuario.push(...usuarios_extras);
     return Usuario;
   });
+  console.log("usuarios con exito ✅");
+} catch (error) {
+    var error204 = document.createElement("div");
+    error204.textContent = "Esto es un error fatal";
+    var columna = document.getElementById("Cliente");
+    columna.appendChild(error204);
+    console.log("No está pusheando los usuarios");
+}
 
 let Usuario = [
   {
