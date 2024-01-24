@@ -137,8 +137,8 @@ button.addEventListener("click", () => {
 function Buscar() {
   var Personas = Usuario.find((Encontrado) => Encontrado.id == valor.value);
   let varificadorEmail = Usuario.find((E) => E.email == vCorreo.value);
-  let varificadorpass = Usuario.find((E) => E.Pass == vPass.value);
-
+  let varificadorpass = Usuario.find((E) => E.Pass == vPass.value) ?? Usuario.find((E) => E.password == vPass.value);
+  
   if (varificadorEmail == varificadorpass) {
     if (Personas == varificadorEmail) {
       pushDatos();
@@ -159,14 +159,14 @@ function Buscar() {
   }
 
   function pushDatos() {
-    Inputinit.value = Personas.nombres;
-    Apellido.value = Personas.apellido;
+    Inputinit.value = Personas.nombres ?? Personas.name.firstname;
+    Apellido.value = Personas.apellido ?? Personas.name.lastname;
     Consutas.value = Personas.consultas;
     Correito.value = Personas.email;
-    mes.value = Personas.Mes;
-    imagenes.value = Personas.Imagen;
-    dia.value = Personas.dia;
-    imagenes.src = Personas.Imagen;
+    mes.value = Personas.Mes ?? "0";
+    imagenes.value = Personas.Imagen ?? "no";
+    dia.value = Personas.dia ?? "no";
+    imagenes.src = Personas.Imagen ?? "no";
   }
   return Personas.Identificador;
 }
