@@ -110,9 +110,9 @@ let Usuario = [
 ];
 
 
-document.addEventListener("keydown", function(envento) {
-  console.log(envento);
-});
+//document.addEventListener("keydown", function(envento) {
+//  console.log(envento);
+//});
 
 
 let cantidadUsuario = Usuario.length;
@@ -137,7 +137,7 @@ button.addEventListener("click", () => {
 function Buscar() {
   var Personas = Usuario.find((Encontrado) => Encontrado.id == valor.value);
   let varificadorEmail = Usuario.find((E) => E.email == vCorreo.value);
-  let varificadorpass = Usuario.find((E) => E.Pass == vPass.value) ?? Usuario.find((E) => E.password == vPass.value);
+  let varificadorpass = Usuario.find((E) => E.Pass == vPass.value) || Usuario.find((E) => E.password == vPass.value);
   
   if (varificadorEmail == varificadorpass) {
     if (Personas == varificadorEmail) {
@@ -151,6 +151,7 @@ function Buscar() {
       document.querySelector("#MunudeUsuario").style.display = "block";
       document.querySelector("#Guardando").style.display = "none";
       document.querySelector("#Guardando").style.display = "none";
+      document.querySelector("#ImagenPerfil").style.display = "block";
     } else {
       document.querySelector("#error").style.background = "rgb(241 137 137)";
     }
@@ -159,28 +160,32 @@ function Buscar() {
   }
 
   function pushDatos() {
-    Inputinit.value = Personas.nombres ?? Personas.name.firstname;
-    Apellido.value = Personas.apellido ?? Personas.name.lastname;
+    Inputinit.value = Personas.nombres || Personas.name.firstname;
+    Apellido.value = Personas.apellido || Personas.name.lastname;
     Consutas.value = Personas.consultas;
     Correito.value = Personas.email;
-    mes.value = Personas.Mes ?? "0";
-    imagenes.value = Personas.Imagen ?? "no";
-    dia.value = Personas.dia ?? "no";
-    imagenes.src = Personas.Imagen ?? "no";
+    mes.value = Personas.Mes || "0";
+    imagenes.value = Personas.Imagen || "no";
+    dia.value = Personas.dia || "no";
+    imagenes.src = Personas.Imagen || "no";
   }
   return Personas.Identificador;
 }
 
 function reEditarDatos() {
   var valores = Usuario.push({
-    nombres: (Usuario[Constante].nombres = Usuario[Constante].nombres),
-    apellido: (Buscar().apellido = Usuario[Constante].apellido),
+    nombres: (Usuario[Constante].nombres = Usuario[Constante].nombres || Usuario[Constante].name.lastname),
+    apellido: (Buscar().apellido = Usuario[Constante].apellido || Usuario[Constante].name.firstname),
     consultas: (Buscar().consultas = Usuario[Constante].consultas),
     id: (Buscar().id = Usuario[Constante].id),
     Imagen: (Buscar().Imagen = Usuario[Constante].Imagen),
   });
 }
 
+function cerrarSeción() {
+  var Personas = 0;
+  return Personas.Identificador;
+}
 //---------------------------------------------------------------------------------Buscador
 
 function DatosUsuarios() {
