@@ -1,4 +1,7 @@
 document.querySelector(".Separando").style.display = "none";
+document.querySelector("#ImagenPerfil").style.display = "none";
+document.querySelector("#cerrar_secion").style.display = "none";
+
 
 function Registrarse() {
   switch (document.querySelector(".Separando").style.display) {
@@ -19,9 +22,11 @@ function mostrarOpciones() {
   switch (document.querySelector("#Cambio").style.display) {
     case "block":
       document.querySelector("#Cambio").style.display = "none";
+      document.querySelector("#cerrar_secion").style.display = "none";
       break;
     case "none":
       document.querySelector("#Cambio").style.display = "block";
+      document.querySelector("#cerrar_secion").style.display = "block";
       break;
     default:
       print("No tengo idea");
