@@ -6,16 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Estilo.css" />
     <title>Formularios ✅</title>
-    <link rel="icon" type="image/jpg" href="./I/favicon.jpeg"/>
-    <meta name="google-site-verification" content="Ck-OqdXrdWaWtTmbrKLVNmRGiJLlP0Dh1mIp2JRu1U8" />
+    <link rel="icon" type="image/jpg" href="./I/favicon.jpeg" />
+    <meta
+      name="google-site-verification"
+      content="Ck-OqdXrdWaWtTmbrKLVNmRGiJLlP0Dh1mIp2JRu1U8"
+    />
   </head>
   <body>
     <header height="100px">
-      <menu style="display: flex;  justify-content: space-between;">
-          <input type="search" name="Buscador" id="">
+      <menu style="display: flex; justify-content: space-between">
+        <input type="search" name="Buscador" id="" />
       </menu>
       <div class="flex">
-        <input id="MunudeUsuario" onclick="mostrarOpciones()" type="image" src="./I/menu-2.svg" alt="Boton de Menu">
+        <input
+          id="MunudeUsuario"
+          onclick="mostrarOpciones()"
+          type="image"
+          src="./I/menu-2.svg"
+          alt="Boton de Menu"
+        />
         <input
           type="button"
           id="Cambio"
@@ -24,12 +33,12 @@
           onclick="Registrarse()"
         />
         <input
-        type="button"
-        id="cerrar_secion"
-        width="30px"
-        value="Cerrar Seción"
-        onclick="cerrarSeción()"
-      />
+          type="button"
+          id="cerrar_secion"
+          width="30px"
+          value="Cerrar Seción"
+          onclick="cerrarSeción()"
+        />
         <input
           type="button"
           class="inciar_seccion"
@@ -41,6 +50,7 @@
     </header>
     <div>
       <div id="Cliente" class="Contenedores_aparecidos"></div>
+      <div id="Seguridad"></div>
     </div>
     <div class="FormulariosidBusqueda" id="formulario">
       <form class="error" id="error">
@@ -107,12 +117,12 @@
           id="Guardando"
           onclick="DatosUsuarios()"
         />
-        <input type="button" value="Renombrar" onclick="Renombrar()" />
+        <input type="button" value="Renombrar" onclick="Renombrar()" class="Renombrarstyle" />
       </div>
     </form>
-    <input type="text" name="post" id="post">
-    <br>
-    <input type="button" value="Cargar">
+    <input type="text" name="post" id="post" />
+    <br />
+    <input type="button" value="Cargar" class="cargarBotton"/>
     <hr style="border: 1px solid #ccc" />
     <div>
       <table id="miTabla">

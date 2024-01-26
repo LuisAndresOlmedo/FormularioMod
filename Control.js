@@ -5,7 +5,7 @@ let iniciar = document.getElementById("formulario");
 let selector = document.getElementById("selectorDeVariables");
 
 const button = document.getElementById("Guardando");
-const codigoSeg = document.getElementById("Seguridad:");
+const codigoSeg = document.getElementById("Seguridad");
 const etiquetaPos = document.getElementById("Cliente");
 var imagenes = document.getElementById("ImagenPerfil");
 var Consutas = document.getElementById("Consultas");
@@ -31,18 +31,20 @@ function Estado() {
 
 try {
   const url = fetch("https://fakestoreapi.com/users")
-  .then((res) => res.json())
-  .then((json) => {
-    const usuarios_extras = json.map(({ address, email, id, name, password, phone, username }) => {
-      return { address, email, id, name, password, phone, username };
+    .then((res) => res.json())
+    .then((json) => {
+      const usuarios_extras = json.map(
+        ({ address, email, id, name, password, phone, username }) => {
+          return { address, email, id, name, password, phone, username };
+        }
+      );
+
+      Usuario.push(...usuarios_extras);
+      return Usuario;
     });
-    
-    Usuario.push(...usuarios_extras);
-    return Usuario;
-  });
   console.log("usuarios con exito ✅");
 } catch (error) {
-    console.log("No está pusheando los usuarios");
+  console.log("No está pusheando los usuarios");
 }
 
 let Usuario = [
@@ -109,11 +111,9 @@ let Usuario = [
   },
 ];
 
-
 //document.addEventListener("keydown", function(envento) {
 //  console.log(envento);
 //});
-
 
 let cantidadUsuario = Usuario.length;
 
@@ -128,6 +128,7 @@ function azares() {
 }
 
 button.addEventListener("click", () => {
+
   const exportarid =
     "<p>" + "Codigo se Seguridad:" + Usuario[Usuario.length - 1].id + "</p>";
   codigoSeg.innerHTML = exportarid;
@@ -137,8 +138,10 @@ button.addEventListener("click", () => {
 function Buscar() {
   var Personas = Usuario.find((Encontrado) => Encontrado.id == valor.value);
   let varificadorEmail = Usuario.find((E) => E.email == vCorreo.value);
-  let varificadorpass = Usuario.find((E) => E.Pass == vPass.value) || Usuario.find((E) => E.password == vPass.value);
-  
+  let varificadorpass =
+    Usuario.find((E) => E.Pass == vPass.value) ||
+    Usuario.find((E) => E.password == vPass.value);
+
   if (varificadorEmail == varificadorpass) {
     if (Personas == varificadorEmail) {
       pushDatos();
@@ -158,7 +161,7 @@ function Buscar() {
   } else {
     document.querySelector("#error").style.background = "rgb(241 137 137)";
   }
-
+  
   function pushDatos() {
     Inputinit.value = Personas.nombres || Personas.name.firstname;
     Apellido.value = Personas.apellido || Personas.name.lastname;
@@ -169,23 +172,23 @@ function Buscar() {
     dia.value = Personas.dia || "no";
     imagenes.src = Personas.Imagen || "no";
   }
+  
+
   return Personas.Identificador;
 }
 
 function reEditarDatos() {
   var valores = Usuario.push({
-    nombres: (Usuario[Constante].nombres = Usuario[Constante].nombres || Usuario[Constante].name.lastname),
-    apellido: (Buscar().apellido = Usuario[Constante].apellido || Usuario[Constante].name.firstname),
+    nombres: (Usuario[Constante].nombres =
+      Usuario[Constante].nombres || Usuario[Constante].name.lastname),
+    apellido: (Buscar().apellido =
+      Usuario[Constante].apellido || Usuario[Constante].name.firstname),
     consultas: (Buscar().consultas = Usuario[Constante].consultas),
     id: (Buscar().id = Usuario[Constante].id),
     Imagen: (Buscar().Imagen = Usuario[Constante].Imagen),
   });
 }
 
-function cerrarSeción() {
-  var Personas = 0;
-  return Personas.Identificador;
-}
 //---------------------------------------------------------------------------------Buscador
 
 function DatosUsuarios() {
