@@ -2,7 +2,6 @@ document.querySelector(".Separando").style.display = "none";
 document.querySelector("#ImagenPerfil").style.display = "none";
 document.querySelector("#cerrar_secion").style.display = "none";
 
-
 function Registrarse() {
   switch (document.querySelector(".Separando").style.display) {
     case "block":
@@ -16,7 +15,7 @@ function Registrarse() {
       console.log("Revisarme");
       break;
   }
-};
+}
 
 function mostrarOpciones() {
   switch (document.querySelector("#Cambio").style.display) {
@@ -47,4 +46,24 @@ function iniciarSeccion() {
       console.log("Revisar inicio");
       break;
   }
-};
+}
+
+function cerrarSeción() {
+  document.querySelector("#ImagenPerfil").style.display = "none";
+  document.querySelector("#cerrar_secion").style.display = "none";
+  cambios_de_valores.value = "Registrarse";
+  document.querySelector("#MunudeUsuario").style.display = "none";
+  document.querySelector(".inciar_seccion").style.display = "block";
+  document.querySelector(".Renombrarstyle").style.display = "none";
+  document.querySelector("#Guardando").style.display = "block";
+  Consutas.value = "Instagram";
+  Apellido.value = "Apellido";
+  Inputinit.value = "Nombres";
+  Contraseña.value = "Contraseña";
+  dia.value = "Dia de nacimiento";
+  mes.value = 0;
+  Correito.value = "Email";
+  valor.value = "Codigo de seguridad";
+  vCorreo.value = "Email";
+  vPass.value = "Contraseña";
+}
