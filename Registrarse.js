@@ -1,15 +1,20 @@
-document.querySelector(".Separando").style.display = "none";
+document.querySelector(".Contenedores_aparecidos").style.display = "none";
+document.querySelector(".Renombrarstyle").style.display = "none"
+document.querySelector("#email").style.display = "none";
 document.querySelector("#ImagenPerfil").style.display = "none";
 document.querySelector("#cerrar_secion").style.display = "none";
 
 function Registrarse() {
-  switch (document.querySelector(".Separando").style.display) {
+  switch (document.querySelector("#email").style.display) {
     case "block":
-      document.querySelector(".Separando").style.display = "none";
+      document.querySelector("#email").style.display = "none";
+      document.querySelector(".Contenedores_aparecidos").style.display = "none";
       break;
     case "none":
+      document.querySelector("#email").style.display = "block";
       document.querySelector(".Separando").style.display = "block";
-      document.querySelector(".error").style.display = "none";
+      document.querySelector(".Contenedores_aparecidos").style.display = "block";
+      document.querySelector("#error").style.display = "none";
       break;
     default:
       console.log("Revisarme");
@@ -40,7 +45,8 @@ function iniciarSeccion() {
       break;
     case "none":
       document.querySelector(".error").style.display = "block";
-      document.querySelector(".Separando").style.display = "none";
+      document.querySelector("#email").style.display = "none";
+      document.querySelector(".Contenedores_aparecidos").style.display = "none";
       break;
     default:
       console.log("Revisar inicio");
