@@ -1,12 +1,12 @@
-const Post = {
-  nombre: Usuario[1].nombres,
-  imagenPerfil: Usuario[1].Imagen,
-  tagName: Usuario[1].tagName,
-  fecha: 13,
-  codigoPost: 13456789,
-  Text: "Me gusta la mayonesa",
-};
+const posteo = document.getElementById("postCreador");
+const usuarioPost = [];
 
-function postUsers() {
-  let postDiv = document.getElementById();
-}
+posteo.addEventListener("click",() => {
+ setTimeout((usuarioPost = Usuario.map(({id, name  }) => {return id, name }), 5000))
+});
+
+const post = [
+  {
+    primer: usuarioPost,
+  },
+];

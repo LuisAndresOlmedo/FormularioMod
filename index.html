@@ -63,33 +63,33 @@
         <div style="display: flex; justify-content: space-between">
           <input type="text" id="Nombres" value="Nombre" />
           <input
-          style="margin-left: 10px"
-          type="text"
-          id="Apellido"
-          value="Apellido"
+            style="margin-left: 10px"
+            type="text"
+            id="Apellido"
+            value="Apellido"
           />
         </div>
         <input type="text" id="Consultas" value="@instagram" />
         <input type="email" name="email" value="Email" id="Correo" />
         <input
-        type="password"
-        class="pass"
-        id="contraseña"
-        value="Constraseña"
+          type="password"
+          class="pass"
+          id="contraseña"
+          value="Constraseña"
         />
         <div style="display: flex; justify-content: space-between">
           <input
-          type="month"
-          class="Mes"
-          value="2022-12"
-          id="fechaNacimiento"
+            type="month"
+            class="Mes"
+            value="2022-12"
+            id="fechaNacimiento"
           />
           <input
-          type="number"
-          style="margin-left: 10px"
-          value="00"
-          class="dia"
-          id="numeroDeFecha"
+            type="number"
+            style="margin-left: 10px"
+            value="00"
+            class="dia"
+            id="numeroDeFecha"
           />
         </div>
         <select name="" onclick="Estado()" id="selectorDeVariables">
@@ -101,30 +101,37 @@
           </option>
         </select>
         <input
-        type="file"
-        class="Cargarimagen"
-        src="https://e7.pngegg.com/pngimages/106/775/png-clipart-loupe-loupe.png"
-        id="ImagenPerfil"
-        name="image"
+          type="file"
+          class="Cargarimagen"
+          src="https://e7.pngegg.com/pngimages/106/775/png-clipart-loupe-loupe.png"
+          id="ImagenPerfil"
+          name="image"
         />
         <input
-        type="button"
-        value="Guardar"
-        id="Guardando"
-        onclick="DatosUsuarios()"
+          type="button"
+          value="Guardar"
+          id="Guardando"
+          onclick="DatosUsuarios()"
         />
-        <input type="button" value="Renombrar" onclick="Renombrar()" class="Renombrarstyle" />
+        <input
+          type="button"
+          value="Renombrar"
+          onclick="Renombrar()"
+          class="Renombrarstyle"
+        />
       </div>
       <div>
         <div id="Cliente" class="Contenedores_aparecidos"></div>
         <div id="Seguridad"></div>
       </div>
     </form>
-    <input type="text" name="post" id="post" />
-    <br />
-    <input type="button" value="Cargar" class="cargarBotton"/>
+    <form class="postCreate" method="post">
+      <input type="text" name="post" id="post" />
+      <input type="button" value="Postear" class="cargarBotton" id="postCreador" />
+    </form>
     <hr style="border: 1px solid #ccc" />
     <div>
+      <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" />
       <table id="miTabla">
         <thead>
           <tr>
@@ -140,16 +147,6 @@
         <tbody>
           <tr></tr>
         </tbody>
-        <div>
-          <div>
-            <input
-              type="button"
-              value="Mostrar Usuarios"
-              onclick="numerosMas()"
-            />
-          </div>
-          <div></div>
-        </div>
       </table>
     </div>
     <script src="./Control.js"></script>

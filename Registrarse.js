@@ -1,4 +1,5 @@
 document.querySelector(".Contenedores_aparecidos").style.display = "none";
+document.querySelector(".postCreate").style.display = "none";
 document.querySelector(".Renombrarstyle").style.display = "none"
 document.querySelector("#email").style.display = "none";
 document.querySelector("#ImagenPerfil").style.display = "none";
@@ -62,6 +63,7 @@ function cerrarSeción() {
   document.querySelector(".inciar_seccion").style.display = "block";
   document.querySelector(".Renombrarstyle").style.display = "none";
   document.querySelector("#Guardando").style.display = "block";
+  document.querySelector(".postCreate").style.display = "none";
   Consutas.value = "Instagram";
   Apellido.value = "Apellido";
   Inputinit.value = "Nombres";
