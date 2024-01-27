@@ -150,6 +150,7 @@ function Buscar() {
         document.querySelector(".inciar_seccion").style.display = "none";
         cambios_de_valores.value = "Editar perfil";
         document.querySelector("#Cambio").style.display = "none";
+        document.querySelector(".Renombrarstyle").style.display = "block";
       }, 1000);
       document.querySelector("#MunudeUsuario").style.display = "block";
       document.querySelector("#Guardando").style.display = "none";

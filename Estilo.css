@@ -11,11 +11,9 @@
 
 .Contenedores_aparecidos {
   border: 1px solid gray;
-  border-radius: 15px;
-  transition: box-shadow 0.5s ease;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  max-width: 92%;
 }
-
 #selectorDeVariables:hover {
   background-color: #ddd;
 }
