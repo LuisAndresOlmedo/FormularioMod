@@ -2,32 +2,28 @@ let valor = document.getElementById("Busqueda");
 let vCorreo = document.getElementById("bCorreo");
 let vPass = document.getElementById("bPass");
 let iniciar = document.getElementById("formulario");
-let selector = document.getElementById("selectorDeVariables");
+let selector = document.getElementById("Genero");
 
 const button = document.getElementById("Guardando");
 const codigoSeg = document.getElementById("Seguridad");
 const etiquetaPos = document.getElementById("Cliente");
-var imagenes = document.getElementById("ImagenPerfil");
-var Consutas = document.getElementById("Consultas");
-var Apellido = document.getElementById("Apellido");
-var Inputinit = document.getElementById("Nombres");
-var Contraseña = document.getElementById("contraseña");
-var dia = document.getElementById("numeroDeFecha");
-var mes = document.getElementById("fechaNacimiento");
-var Correito = document.getElementById("Correo");
-var botoncito = document.getElementById("botoncito");
+const imagenes = document.getElementById("ImagenPerfil");
+const Consutas = document.getElementById("Consultas");
+const Apellido = document.getElementById("Apellido");
+const Inputinit = document.getElementById("Nombres");
+const Contraseña = document.getElementById("contraseña");
+const dia = document.getElementById("numeroDeFecha");
+const mes = document.getElementById("fechaNacimiento");
+const Correito = document.getElementById("Correo");
+botoncito = document.getElementById("botoncito");
 let EtiquetaP = {};
-var Etiquetas = "<h5></h5>";
+let Etiquetas = "<h5></h5>";
+etiquetaPos.innerHTML = Etiquetas; //Inicializacion de Elemento.
 imagenes.src = "./I/Avatar.png";
 document.querySelector("#MunudeUsuario").style.display = "none";
 document.querySelector(".error").style.display = "none";
 document.querySelector(".inciar_seccion").style.display = "block";
 let cambios_de_valores = document.getElementById("Cambio");
-
-function Estado() {
-  var seleccionActual = selector.value;
-  console.log(seleccionActual);
-}
 
 try {
   const url = fetch("https://fakestoreapi.com/users")
@@ -59,6 +55,8 @@ let Usuario = [
     email: "olmedoluisandres@gmial.com",
     id: 8000,
     Identificador: 0,
+    sexo: "MASCULINO",
+    username: "Luiso",
   },
   {
     nombres: "Juan",
@@ -72,6 +70,8 @@ let Usuario = [
     id: 36,
     Identificador: 1,
     post1: 0,
+    sexo: "MASCULINO",
+    username: "Juanma",
   },
   {
     nombres: "Jose",
@@ -79,11 +79,13 @@ let Usuario = [
     consultas: "¿Reparaciones?",
     Imagen: "./I/usuarios (1).png",
     Mes: "2022-07",
-    Pass: "1234567",
+    Pass: "54esf54e",
     dia: "12",
     email: "josemontenegro@gmial.com",
     id: 15,
     Identificador: 2,
+    sexo: "MASCULINO",
+    username: "Joselo",
   },
   {
     nombres: "Leo",
@@ -91,11 +93,13 @@ let Usuario = [
     consultas: "¿Reparaciones?",
     Imagen: "./I/usuarios (2).png",
     Mes: "2022-07",
-    Pass: "1234567",
+    Pass: "099udjmfd",
     dia: "12",
     email: "leonelvillalva@gmial.com",
     id: 10,
     Identificador: 3,
+    sexo: "MASCULINO",
+    username: "LeonelMessi",
   },
   {
     nombres: "Fernando",
@@ -103,11 +107,13 @@ let Usuario = [
     consultas: "¿Reparaciones?",
     Imagen: "./I/usuarios (3).png",
     Mes: "2022-07",
-    Pass: "1234567",
+    Pass: "8df98dsf9",
     dia: "12",
     email: "fernandoflores@gmial.com",
     id: 9,
     Identificador: 4,
+    sexo: "FEMENINO",
+    username: "Flavialorra",
   },
 ];
 
@@ -117,7 +123,6 @@ let Usuario = [
 
 let cantidadUsuario = Usuario.length;
 
-etiquetaPos.innerHTML = Etiquetas; //Inicializacion de Elemento.
 
 function azares() {
   var numeroUsuario = cantidadUsuario;
@@ -173,6 +178,7 @@ function Buscar() {
     imagenes.value = Personas.Imagen || "no";
     dia.value = Personas.dia || "no";
     imagenes.src = Personas.Imagen || "no";
+    selector.value = Personas.sexo;
   }
   
 
@@ -194,6 +200,7 @@ function reEditarDatos() {
 //---------------------------------------------------------------------------------Buscador
 
 function DatosUsuarios() {
+  sexoMF = selector.value;
   soloNombre = Inputinit.value;
   soloApellido = Apellido.value;
   soloImagen = imagenes.src;
@@ -208,6 +215,7 @@ function DatosUsuarios() {
     apellido: soloApellido,
     Imagen: soloImagen,
     email: soloEmail,
+    sexo: sexoMF,
     Pass: soloContra,
     dia: soloDia,
     Mes: soloMes,
@@ -260,7 +268,9 @@ function Renombrar() {
   Usuario[Constante].email = Correito.value;
   Usuario[Constante].Mes = mes.value;
   Usuario[Constante].dia = dia.value;
+  Usuario[Constante].sexo = selector.value;
   ImprimirDatos();
+  return Constante;
 }
 
 // Imprime el nombre de un arrays

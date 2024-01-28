@@ -14,8 +14,9 @@
   </head>
   <body>
     <header height="100px">
+      <img src="./I/Logo Pagina.png" width="6%" alt="logo">
       <menu style="display: flex; justify-content: space-between">
-        <input type="search" name="Buscador" id="" />
+        <input value="¿Que buscas?" type="search" name="Buscador" id="" />
       </menu>
       <div class="flex">
         <input
@@ -32,6 +33,7 @@
           value="Registrate"
           onclick="Registrarse()"
         />
+        <div class="separador"> | </div>
         <input
           type="button"
           id="cerrar_secion"
@@ -92,21 +94,20 @@
             id="numeroDeFecha"
           />
         </div>
-        <select name="" onclick="Estado()" id="selectorDeVariables">
-          <option value="FEMENINO">FEMENINO</option>
-          <option value="MASCULINO">MASCULINO</option>
-          <option value="NODEFINED">CORNUDO</option>
-          <option value="Valor">
-            <img src="./I/usuarios (2).png" alt="" />
-          </option>
-        </select>
-        <input
-          type="file"
-          class="Cargarimagen"
-          src="https://e7.pngegg.com/pngimages/106/775/png-clipart-loupe-loupe.png"
-          id="ImagenPerfil"
-          name="image"
-        />
+        <div class="selectedAvatar">
+          <select name="Generos" onclick="Estado()" id="Genero">
+            <option value="FEMENINO" selected>FEMENINO</option>
+            <option value="MASCULINO" selected>MASCULINO</option>
+          </select>
+          <div class="separador"> | </div>
+          <input
+            type="file"
+            class="Cargarimagen"
+            name="archivo"
+            id="ImagenPerfil"
+            accept=".jpg, .jpeg, .png"
+          />
+        </div>
         <input
           type="button"
           value="Guardar"
@@ -127,8 +128,15 @@
     </form>
     <form class="postCreate" method="post">
       <input type="text" name="post" id="post" />
-      <input type="button" value="Postear" class="cargarBotton" id="postCreador" />
+      <input
+        type="button"
+        value="Postear"
+        class="cargarBotton"
+        id="postCreador"
+        onclick="cargar()"
+      />
     </form>
+    <div id="postLoad"></div>
     <hr style="border: 1px solid #ccc" />
     <div>
       <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" />
