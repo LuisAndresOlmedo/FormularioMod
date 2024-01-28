@@ -1,12 +1,35 @@
 const posteo = document.getElementById("postCreador");
-const usuarioPost = [];
+var postLoad = document.getElementById("postLoad");
+let textPost = document.getElementById("post");
+const posteos = [];
 
-posteo.addEventListener("click",() => {
- setTimeout((usuarioPost = Usuario.map(({id, name  }) => {return id, name }), 5000))
-});
+setTimeout(
+  ((usuarioPost = Usuario.map(({ id, username }) => {
+    return id, username;
+  })),
+  1000)
+);
 
-const post = [
-  {
-    primer: usuarioPost,
-  },
-];
+  function cargar() {
+    var boxPost = document.createElement("div");
+    postLoad.appendChild(boxPost);
+    boxPost.classList.add("boxMax");
+    const usuarioEncontrado = usuarioPost[Buscar()];
+    const postearPost = 
+      "<div" +
+      " " +
+      "class=" +
+      "'postLoaders'" +
+      ">" +
+      "<p>" +
+      "@" +
+      usuarioEncontrado +
+      "</p>" +
+      "</br>" +
+      "<p>" +
+      textPost.value +
+      "</p>" +
+      "</div>";
+    boxPost.innerHTML = postearPost;
+    return posteos.push({id: usuarioEncontrado, texto: textPost.value});
+  }
