@@ -64,7 +64,7 @@ function cerrarSeción() {
   document.querySelector(".Renombrarstyle").style.display = "none";
   document.querySelector("#Guardando").style.display = "block";
   document.querySelector(".postCreate").style.display = "none";
-  Consutas.value = "Instagram";
+  Instagram.value = "Instagram";
   Apellido.value = "Apellido";
   Inputinit.value = "Nombres";
   Contraseña.value = "Contraseña";

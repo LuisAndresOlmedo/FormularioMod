@@ -8,7 +8,7 @@ const button = document.getElementById("Guardando");
 const codigoSeg = document.getElementById("Seguridad");
 const etiquetaPos = document.getElementById("Cliente");
 const imagenes = document.getElementById("ImagenPerfil");
-const Consutas = document.getElementById("Consultas");
+const Instagram = document.getElementById("Consultas");
 const Apellido = document.getElementById("Apellido");
 const Inputinit = document.getElementById("Nombres");
 const Contraseña = document.getElementById("contraseña");
@@ -20,6 +20,7 @@ let EtiquetaP = {};
 let Etiquetas = "<h5></h5>";
 etiquetaPos.innerHTML = Etiquetas; //Inicializacion de Elemento.
 imagenes.src = "./I/Avatar.png";
+var soloImagen = imagenes.src;
 document.querySelector("#MunudeUsuario").style.display = "none";
 document.querySelector(".error").style.display = "none";
 document.querySelector(".inciar_seccion").style.display = "block";
@@ -27,11 +28,11 @@ let cambios_de_valores = document.getElementById("Cambio");
 
 try {
   const url = fetch("https://fakestoreapi.com/users")
-    .then((res) => res.json())
+    .then((respuesta) => respuesta.json())
     .then((json) => {
       const usuarios_extras = json.map(
-        ({ address, email, id, name, password, phone, username }) => {
-          return { address, email, id, name, password, phone, username };
+        ({ address, email, name, password, phone, username }) => {
+          return { address, email, id: azares(), name, password, phone, username, Imagen: soloImagen, Mes: "2000-09", dia: "13", sexo: "", Instagram: "@"+name.firstname + name.lastname, };
         }
       );
 
@@ -47,13 +48,13 @@ let Usuario = [
   {
     nombres: "Luis Andres",
     apellido: "Olmedo",
-    consultas: "¿Reparaciones?",
+    Instagram: "@Luisandres.nk",
     Imagen: "./I/Usuario.png",
     Mes: "2000-09",
     Pass: "AdministradoresDeEmpresas2000",
     dia: "13",
     email: "olmedoluisandres@gmial.com",
-    id: 8000,
+    id: 766224,
     Identificador: 0,
     sexo: "MASCULINO",
     username: "Luiso",
@@ -61,7 +62,7 @@ let Usuario = [
   {
     nombres: "Juan",
     apellido: "Carlos",
-    consultas: "¿Reparaciones?",
+    Instagram: "@juanCarlos",
     Imagen: "./I/Usuario 2.png",
     Mes: "2022-07",
     Pass: "JuanGuarnizoes1",
@@ -76,7 +77,7 @@ let Usuario = [
   {
     nombres: "Jose",
     apellido: "Montenegro",
-    consultas: "¿Reparaciones?",
+    Instagram: "@JoseMontenegro",
     Imagen: "./I/usuarios (1).png",
     Mes: "2022-07",
     Pass: "54esf54e",
@@ -90,7 +91,7 @@ let Usuario = [
   {
     nombres: "Leo",
     apellido: "Villalva",
-    consultas: "¿Reparaciones?",
+    Instagram: "@LeoVillalva",
     Imagen: "./I/usuarios (2).png",
     Mes: "2022-07",
     Pass: "099udjmfd",
@@ -104,7 +105,7 @@ let Usuario = [
   {
     nombres: "Fernando",
     apellido: "Flores",
-    consultas: "¿Reparaciones?",
+    Instagram: "@FernandoFlores",
     Imagen: "./I/usuarios (3).png",
     Mes: "2022-07",
     Pass: "8df98dsf9",
@@ -131,6 +132,7 @@ function azares() {
   let numeros = numeroUsuario * redondeo;
   return numeros;
 }
+
 
 button.addEventListener("click", () => {
 
@@ -172,12 +174,12 @@ function Buscar() {
   function pushDatos() {
     Inputinit.value = Personas.nombres || Personas.name.firstname;
     Apellido.value = Personas.apellido || Personas.name.lastname;
-    Consutas.value = Personas.consultas;
+    Instagram.value = Personas.Instagram;
     Correito.value = Personas.email;
-    mes.value = Personas.Mes || "0";
-    imagenes.value = Personas.Imagen || "no";
-    dia.value = Personas.dia || "no";
-    imagenes.src = Personas.Imagen || "no";
+    mes.value = Personas.Mes;
+    imagenes.value = Personas.Imagen;
+    dia.value = Personas.dia;
+    imagenes.src = Personas.Imagen;
     selector.value = Personas.sexo;
   }
   
@@ -191,7 +193,7 @@ function reEditarDatos() {
       Usuario[Constante].nombres || Usuario[Constante].name.lastname),
     apellido: (Buscar().apellido =
       Usuario[Constante].apellido || Usuario[Constante].name.firstname),
-    consultas: (Buscar().consultas = Usuario[Constante].consultas),
+    Instagram: (Buscar().Instagram = Usuario[Constante].Instagram),
     id: (Buscar().id = Usuario[Constante].id),
     Imagen: (Buscar().Imagen = Usuario[Constante].Imagen),
   });
@@ -205,7 +207,7 @@ function DatosUsuarios() {
   soloApellido = Apellido.value;
   soloImagen = imagenes.src;
   soloDia = dia.value;
-  soloConsultas = Consutas.value;
+  soloInstagram = Instagram.value;
   soloContra = Contraseña.value;
   soloMes = mes.value;
   soloEmail = Correito.value;
@@ -219,7 +221,7 @@ function DatosUsuarios() {
     Pass: soloContra,
     dia: soloDia,
     Mes: soloMes,
-    consultas: soloConsultas,
+    Instagram: soloInstagram,
     Identificador: cantidadUsuario,
     id: azares(),
   });
@@ -244,8 +246,8 @@ function ImprimirDatos() {
       Usuario[Constante].apellido +
       "<br/>" +
       "<br/>" +
-      "<spam>Consultas:</spam>" +
-      Usuario[Constante].consultas +
+      "<spam>Instagram:</spam>" +
+      Usuario[Constante].Instagram +
       "<br/>" +
       "<br/>" +
       "<spam>Codigo Secreto:</spam>" +
@@ -263,7 +265,7 @@ function Renombrar() {
   var Constante = valorUsuario.Identificador;
   Usuario[Constante].nombres = Inputinit.value;
   Usuario[Constante].apellido = Apellido.value;
-  Usuario[Constante].consultas = Consutas.value;
+  Usuario[Constante].Instagram = Instagram.value;
   Usuario[Constante].Pass = Contraseña.value;
   Usuario[Constante].email = Correito.value;
   Usuario[Constante].Mes = mes.value;

@@ -51,7 +51,7 @@ function tablas3() {
   columna.appendChild(creartr);
   var tablita = document.createElement("td");
   tablita.appendChild(
-    document.createTextNode(Usuario[columnaR].consultas ?? "Cargando")
+    document.createTextNode(Usuario[columnaR].Instagram ?? "@"+Usuario[columnaR].name.firstname + Usuario[columnaR].name.lastname)
   );
   row.appendChild(tablita);
 }
