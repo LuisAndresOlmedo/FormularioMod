@@ -139,7 +139,8 @@
     <div id="postLoad"></div>
     <hr style="border: 1px solid #ccc" />
     <div>
-      <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" />
+      <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" id="mostrarUsuarios" />
+      <input type="button" value="Eliminar usuario" onclick="eliminar()" id="eliminarUsuarios" />
       <table id="miTabla">
         <thead>
           <tr>
@@ -152,7 +153,7 @@
             <th>Fecha</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tbodyID">
           <tr></tr>
         </tbody>
       </table>
