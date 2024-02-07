@@ -9,14 +9,15 @@ button.addEventListener("click", () =>
       return id, username;
     })),
     2000)
-  ));
+  )
+);
 
 function cargar() {
   var boxPost = document.createElement("div");
   postLoad.appendChild(boxPost);
-    boxPost.classList.add("boxMax");
-    const usuarioEncontrado = usuarioPost[Buscar()];
-    const postearPost = 
+  boxPost.classList.add("boxMax");
+  const usuarioEncontrado = usuarioPost[Buscar()];
+  const postearPost =
     "<div" +
     " " +
     "class=" +
@@ -31,7 +32,10 @@ function cargar() {
     textPost.value +
     "</p>" +
     "</div>";
-    boxPost.innerHTML = postearPost;
-    return posteos.push({id: Buscar(), usuario: usuarioEncontrado, texto: textPost.value});
-  }
- 
+  boxPost.innerHTML = postearPost;
+  return posteos.push({
+    id: Buscar(),
+    usuario: usuarioEncontrado,
+    texto: textPost.value,
+  });
+}

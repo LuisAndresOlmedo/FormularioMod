@@ -1,6 +1,6 @@
 document.querySelector(".Contenedores_aparecidos").style.display = "none";
 document.querySelector(".postCreate").style.display = "none";
-document.querySelector(".Renombrarstyle").style.display = "none"
+document.querySelector(".Renombrarstyle").style.display = "none";
 document.querySelector("#email").style.display = "none";
 document.querySelector("#ImagenPerfil").style.display = "none";
 document.querySelector("#cerrar_secion").style.display = "none";
@@ -14,7 +14,8 @@ function Registrarse() {
     case "none":
       document.querySelector("#email").style.display = "block";
       document.querySelector(".Separando").style.display = "block";
-      document.querySelector(".Contenedores_aparecidos").style.display = "block";
+      document.querySelector(".Contenedores_aparecidos").style.display =
+        "block";
       document.querySelector("#error").style.display = "none";
       break;
     default:

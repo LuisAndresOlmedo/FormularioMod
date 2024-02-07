@@ -119,28 +119,12 @@ function eliminar() {
 }
 
 function resetTable() {
-    var filas = columna.getElementsByTagName("tr");
-    for (var i = 0; i < filas.length; i++) {
-      var fila = filas[i];
-      var celdas = fila.getElementsByTagName("td");
-      for (var j = 0; j < celdas.length; j++) {
-        fila.removeChild(celdas[j]);
-      }
+  var filas = columna.getElementsByTagName("tr");
+  for (var i = 0; i < filas.length; i++) {
+    var fila = filas[i];
+    var celdas = fila.getElementsByTagName("td");
+    for (var j = 0; j < celdas.length; j++) {
+      fila.removeChild(celdas[j]);
     }
   }
-
-  //FIZZBUZZ
-  // for (let i = 0; i <= 1000; i++) {
-  //   if (i % 3 == 0 ) {
-  //     console.log("Fizz");
-  //   }
-  //   if (i % 5 == 0) {
-  //     console.log("Buzz");
-  //   }
-  //   if (i % 3 == 0 && i % 5 == 0) {
-  //     console.log("FizzBuzz");
-  //   }
-  //   else {
-  //     console.log(i);
-  //   }
-  // };
+}

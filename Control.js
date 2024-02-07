@@ -32,19 +32,28 @@ try {
     .then((json) => {
       const usuarios_extras = json.map(
         ({ address, email, name, password, phone, username }) => {
-          return { address, email, id: azares(), name, password, phone, username, Imagen: soloImagen, Mes: "2000-09", dia: "13", sexo: "", Instagram: "@"+name.firstname + name.lastname, };
+          return {
+            address,
+            email,
+            id: azares(),
+            name,
+            password,
+            phone,
+            username,
+            Imagen: soloImagen,
+            Mes: "2000-09",
+            dia: "13",
+            sexo: "",
+            Instagram: "@" + name.firstname + name.lastname,
+          };
         }
       );
-
       Usuario.push(...usuarios_extras);
       return Usuario;
     });
-  console.log("usuarios con exito ✅");
 } catch (error) {
   console.log("No está pusheando los usuarios");
 }
-
-
 
 let Usuario = [
   {
@@ -126,7 +135,6 @@ let Usuario = [
 
 let cantidadUsuario = Usuario.length;
 
-
 function azares() {
   var numeroUsuario = cantidadUsuario;
   var azar = Math.random() * 100000;
@@ -135,9 +143,7 @@ function azares() {
   return numeros;
 }
 
-
 button.addEventListener("click", () => {
-
   const exportarid =
     "<p>" + "Codigo se Seguridad:" + Usuario[Usuario.length - 1].id + "</p>";
   codigoSeg.innerHTML = exportarid;
@@ -172,7 +178,7 @@ function Buscar() {
   } else {
     document.querySelector("#error").style.background = "rgb(241 137 137)";
   }
-  
+
   function pushDatos() {
     Inputinit.value = Personas.nombres || Personas.name.firstname;
     Apellido.value = Personas.apellido || Personas.name.lastname;
@@ -184,7 +190,6 @@ function Buscar() {
     imagenes.src = Personas.Imagen;
     selector.value = Personas.sexo;
   }
-  
 
   return Personas.Identificador;
 }
@@ -276,5 +281,3 @@ function Renombrar() {
   ImprimirDatos();
   return Constante;
 }
-
-// Imprime el nombre de un arrays
