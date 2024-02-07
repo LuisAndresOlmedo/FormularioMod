@@ -2,13 +2,14 @@ const posteo = document.getElementById("postCreador");
 var postLoad = document.getElementById("postLoad");
 let textPost = document.getElementById("post");
 const posteos = [];
- 
-setTimeout(
-  ((usuarioPost = Usuario.map(({ id, username }) => {
-    return id, username;
-  })),
-  5000)
-);
+
+button.addEventListener("click", () =>
+  setTimeout(
+    ((usuarioPost = Usuario.map(({ id, username }) => {
+      return id, username;
+    })),
+    2000)
+  ));
 
 function cargar() {
   var boxPost = document.createElement("div");

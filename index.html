@@ -14,7 +14,7 @@
   </head>
   <body>
     <header height="100px">
-      <img src="./I/Logo Pagina.png" width="6%" alt="logo">
+      <img src="./I/Logo Pagina.png" width="6%" alt="logo" />
       <menu style="display: flex; justify-content: space-between">
         <input value="¿Que buscas?" type="search" name="Buscador" id="" />
       </menu>
@@ -33,7 +33,7 @@
           value="Registrate"
           onclick="Registrarse()"
         />
-        <div class="separador"> | </div>
+        <div class="separador">|</div>
         <input
           type="button"
           id="cerrar_secion"
@@ -99,7 +99,7 @@
             <option value="FEMENINO" selected>FEMENINO</option>
             <option value="MASCULINO">MASCULINO</option>
           </select>
-          <div class="separador"> | </div>
+          <div class="separador">|</div>
           <input
             type="file"
             class="Cargarimagen"
@@ -139,8 +139,18 @@
     <div id="postLoad"></div>
     <hr style="border: 1px solid #ccc" />
     <div>
-      <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" id="mostrarUsuarios" />
-      <input type="button" value="Eliminar usuario" onclick="eliminar()" id="eliminarUsuarios" />
+      <input
+        type="button"
+        value="Mostrar Usuarios"
+        onclick="numerosMas()"
+        id="mostrarUsuarios"
+      />
+      <input
+        type="button"
+        value="Eliminar usuario"
+        onclick="eliminar()"
+        id="eliminarUsuarios"
+      />
       <table id="miTabla">
         <thead>
           <tr>
