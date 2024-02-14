@@ -32,17 +32,38 @@ try {
     .then((json) => {
       const usuarios_extras = json.map(
         ({ address, email, name, password, phone, username }) => {
-          return { address, email, id: azares(), name, password, phone, username, Imagen: soloImagen, Mes: "2000-09", dia: "13", sexo: "", Instagram: "@"+name.firstname + name.lastname, };
+          return {
+            address,
+            email,
+            id: azares(),
+            name,
+            password,
+            phone,
+            username,
+            Imagen: soloImagen,
+            Mes: "2000-09",
+            dia: "13",
+            sexo: "",
+            Identificador: cantidadUsuario++,
+            Instagram: "@" + name.firstname + name.lastname,
+          };
         }
       );
-
       Usuario.push(...usuarios_extras);
-      return Usuario;
+      setTimeout(
+        ((usuarioPost = Usuario.map(({ id, username }) => {
+          return id, username;
+        })),
+        2000)
+      );
+      return Usuario, usuarioPost;
     });
   console.log("usuarios con exito ✅");
 } catch (error) {
   console.log("No está pusheando los usuarios");
 }
+
+// Objeto Usuario
 
 let Usuario = [
   {
@@ -124,7 +145,6 @@ let Usuario = [
 
 let cantidadUsuario = Usuario.length;
 
-
 function azares() {
   var numeroUsuario = cantidadUsuario;
   var azar = Math.random() * 100000;
@@ -133,9 +153,7 @@ function azares() {
   return numeros;
 }
 
-
 button.addEventListener("click", () => {
-
   const exportarid =
     "<p>" + "Codigo se Seguridad:" + Usuario[Usuario.length - 1].id + "</p>";
   codigoSeg.innerHTML = exportarid;
@@ -170,10 +188,10 @@ function Buscar() {
   } else {
     document.querySelector("#error").style.background = "rgb(241 137 137)";
   }
-  
+
   function pushDatos() {
-    Inputinit.value = Personas.nombres || Personas.name.firstname;
-    Apellido.value = Personas.apellido || Personas.name.lastname;
+    Inputinit.value = Personas.nombres || Personas.name.firstname.toUpperCase;
+    Apellido.value = Personas.apellido || Personas.name.lastname.toUpperCase;
     Instagram.value = Personas.Instagram;
     Correito.value = Personas.email;
     mes.value = Personas.Mes;
@@ -182,7 +200,6 @@ function Buscar() {
     imagenes.src = Personas.Imagen;
     selector.value = Personas.sexo;
   }
-  
 
   return Personas.Identificador;
 }
@@ -225,7 +242,9 @@ function DatosUsuarios() {
     Identificador: cantidadUsuario,
     id: azares(),
   });
-
+  usuarioPost = Usuario.map(({ id, username = Instagram.value }) => {
+    return id, username;
+  });
   ImprimirDatos();
 }
 
