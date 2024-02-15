@@ -202,7 +202,7 @@ summary:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 720px) {
   body {
     padding: 10px;
   }
@@ -222,4 +222,7 @@ summary:hover {
   #miTabla {
     display: none;
   }
+  header {
+    display: block;
+}
 }
