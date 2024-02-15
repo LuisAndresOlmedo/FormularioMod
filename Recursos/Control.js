@@ -3,7 +3,6 @@ let vCorreo = document.getElementById("bCorreo");
 let vPass = document.getElementById("bPass");
 let iniciar = document.getElementById("formulario");
 let selector = document.getElementById("Genero");
-
 const button = document.getElementById("Guardando");
 const codigoSeg = document.getElementById("Seguridad");
 const etiquetaPos = document.getElementById("Cliente");
@@ -15,16 +14,18 @@ const Contraseña = document.getElementById("contraseña");
 const dia = document.getElementById("numeroDeFecha");
 const mes = document.getElementById("fechaNacimiento");
 const Correito = document.getElementById("Correo");
-botoncito = document.getElementById("botoncito");
-let EtiquetaP = {};
-let Etiquetas = "<h5></h5>";
-etiquetaPos.innerHTML = Etiquetas; //Inicializacion de Elemento.
-imagenes.src = "./I/Avatar.png";
-var soloImagen = imagenes.src;
+const botoncito = document.getElementById("botoncito");
+let cambios_de_valores = document.getElementById("Cambio");
+
 document.querySelector("#MunudeUsuario").style.display = "none";
 document.querySelector(".error").style.display = "none";
 document.querySelector(".inciar_seccion").style.display = "block";
-let cambios_de_valores = document.getElementById("Cambio");
+
+let EtiquetaP = {};
+let Etiquetas = "<h5></h5>";
+etiquetaPos.innerHTML = Etiquetas;
+imagenes.src = "./I/Avatar.png";
+var soloImagen = imagenes.src;
 
 try {
   const url = fetch("https://fakestoreapi.com/users")
@@ -50,12 +51,7 @@ try {
         }
       );
       Usuario.push(...usuarios_extras);
-      setTimeout(
-        ((usuarioPost = Usuario.map(({ id, username }) => {
-          return id, username;
-        })),
-        2000)
-      );
+      tiempoDeCarga();
       return Usuario, usuarioPost;
     });
   console.log("usuarios con exito ✅");

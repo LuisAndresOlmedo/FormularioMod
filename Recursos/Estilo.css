@@ -113,7 +113,7 @@ table {
 
 th,
 td {
-  width: 14%;
+  width: 100%;
   text-align: left;
   padding: 12px;
 }
@@ -200,4 +200,26 @@ summary:hover {
   padding: 4px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  input[type="button"] {
+    width: 100%;
+  }
+
+  th,
+  td {
+    width: 100%;
+  }
+  #miTabla {
+    display: none;
+  }
 }
