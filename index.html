@@ -11,12 +11,18 @@
       name="google-site-verification"
       content="Ck-OqdXrdWaWtTmbrKLVNmRGiJLlP0Dh1mIp2JRu1U8"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header height="100px">
-      <img src="./I/Logo Pagina.png" width="6%" alt="logo">
-      <menu style="display: flex; justify-content: space-between">
-        <input value="¿Que buscas?" type="search" name="Buscador" id="" />
+      <img src="./I/Logo Pagina.png" width="6%" alt="logo" />
+      <menu class="buscador" style="display: flex; justify-content: space-between">
+        <input class="buscador" value="¿Que buscas?" type="search" name="Buscador" id="" />
       </menu>
       <div class="flex">
         <input
@@ -33,7 +39,7 @@
           value="Registrate"
           onclick="Registrarse()"
         />
-        <div class="separador"> | </div>
+        <div class="separador">|</div>
         <input
           type="button"
           id="cerrar_secion"
@@ -44,7 +50,7 @@
         <input
           type="button"
           class="inciar_seccion"
-          value="Iniciar Seccion"
+          value="Iniciar Sesión"
           onclick="iniciarSeccion()"
         />
         <img height="45px" id="ImagenPerfil" />
@@ -52,16 +58,16 @@
     </header>
     <div class="FormulariosidBusqueda" id="formulario">
       <form class="error" id="error">
-        <h3>Codigo Seguridad</h3>
+        <h3>Iniciar Sesión</h3>
         <input type="text" value="Email" id="bCorreo" /><br />
         <input type="text" value="Contraseña" id="bPass" /><br />
-        <input type="text" value="Busqueda" id="Busqueda" /><br />
-        <input type="button" value="Buscar" id="botoncito" onclick="Buscar()" />
+        <input type="text" value="Codigo ******" id="Busqueda" /><br />
+        <input type="button" value="Iniciar" id="botoncito" onclick="Buscar()" />
       </form>
     </div>
     <form id="email">
       <div id="registros" class="Separando">
-        <h3>Completa formulario</h3>
+        <h3>Registrarse</h3>
         <div style="display: flex; justify-content: space-between">
           <input type="text" id="Nombres" value="Nombre" />
           <input
@@ -99,7 +105,7 @@
             <option value="FEMENINO" selected>FEMENINO</option>
             <option value="MASCULINO">MASCULINO</option>
           </select>
-          <div class="separador"> | </div>
+          <div class="separador">|</div>
           <input
             type="file"
             class="Cargarimagen"
@@ -110,7 +116,7 @@
         </div>
         <input
           type="button"
-          value="Guardar"
+          value="Registrarse"
           id="Guardando"
           onclick="DatosUsuarios()"
         />
@@ -121,11 +127,11 @@
           class="Renombrarstyle"
         />
       </div>
-      <div>
-        <div id="Cliente" class="Contenedores_aparecidos"></div>
-        <div id="Seguridad"></div>
-      </div>
     </form>
+    <div class="FormulariosidBusqueda">
+      <!-- <div id="Cliente" class="Contenedores_aparecidos"></div> -->
+      <div id="Seguridad"></div>
+    </div>
     <form class="postCreate" method="post">
       <input type="text" name="post" id="post" />
       <input
@@ -139,8 +145,18 @@
     <div id="postLoad"></div>
     <hr style="border: 1px solid #ccc" />
     <div>
-      <input type="button" value="Mostrar Usuarios" onclick="numerosMas()" id="mostrarUsuarios" />
-      <input type="button" value="Eliminar usuario" onclick="eliminar()" id="eliminarUsuarios" />
+      <input
+        type="button"
+        value="Mostrar Usuarios"
+        onclick="numerosMas()"
+        id="mostrarUsuarios"
+      />
+      <input
+        type="button"
+        value="Eliminar usuario"
+        onclick="eliminar()"
+        id="eliminarUsuarios"
+      />
       <table id="miTabla">
         <thead>
           <tr>

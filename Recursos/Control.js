@@ -5,7 +5,6 @@ let iniciar = document.getElementById("formulario");
 let selector = document.getElementById("Genero");
 const button = document.getElementById("Guardando");
 const codigoSeg = document.getElementById("Seguridad");
-const etiquetaPos = document.getElementById("Cliente");
 const imagenes = document.getElementById("ImagenPerfil");
 const Instagram = document.getElementById("Consultas");
 const Apellido = document.getElementById("Apellido");
@@ -23,7 +22,6 @@ document.querySelector(".inciar_seccion").style.display = "block";
 
 let EtiquetaP = {};
 let Etiquetas = "<h5></h5>";
-etiquetaPos.innerHTML = Etiquetas;
 imagenes.src = "./I/Avatar.png";
 var soloImagen = imagenes.src;
 
@@ -267,9 +265,7 @@ function ImprimirDatos() {
       "<br/>" +
       "<spam>Codigo Secreto:</spam>" +
       Usuario[Constante].id;
-    etiquetaPos.innerHTML = "<H1>Cargados:</H1>" + Datos;
   } else {
-    etiquetaPos.innerHTML = "<h3>Guardado ✅</h3>";
   }
 }
 
