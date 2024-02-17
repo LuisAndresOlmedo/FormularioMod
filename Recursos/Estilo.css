@@ -185,6 +185,7 @@ summary:hover {
 
 .editarEliminar {
   display: inline-grid;
+  align-content: space-around;
 }
 /* .nameUser {
 }; */
@@ -259,5 +260,8 @@ h4 {
   }
   .error {
     width: 90%;
+  }
+  #MunudeUsuario {
+    display: block;
   }
 }

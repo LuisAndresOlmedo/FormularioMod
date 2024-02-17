@@ -1,4 +1,4 @@
-const posteo = document.getElementById("postCreador");
+let posteo = document.getElementById("postCreador");
 var postLoad = document.getElementById("postLoad");
 let textPost = document.getElementById("post");
 const posteos = [
@@ -6,26 +6,71 @@ const posteos = [
     id: 36,
     texto: "Post Prueba ✅",
     usuario: "@mor_2314",
+    fecha: {
+      dia: "Fri",
+      mes: "Feb",
+      diaDelMes: "16",
+      año: "2024",
+      hora: "16:03:33",
+      timeZone: "GMT-0300",
+      timeZoneNombre: "(hora estándar de Argentina)",
+    },
   },
   {
     id: 0,
     texto: "cargamos con forEach 😎",
     usuario: "@luisandres.nk",
+    fecha: {
+      dia: "Fri",
+      mes: "Feb",
+      diaDelMes: "16",
+      año: "2024",
+      hora: "16:03:33",
+      timeZone: "GMT-0300",
+      timeZoneNombre: "(hora estándar de Argentina)",
+    },
   },
   {
     id: 0,
     texto: "Se cargan correctamente 💬",
     usuario: "@luisandres.nk",
+    fecha: {
+      dia: "Fri",
+      mes: "Feb",
+      diaDelMes: "16",
+      año: "2024",
+      hora: "16:03:33",
+      timeZone: "GMT-0300",
+      timeZoneNombre: "(hora estándar de Argentina)",
+    },
   },
   {
     id: 0,
     texto: "Otro 14 de feb, soltero y feliz 😎",
     usuario: "@luisandres.nk",
+    fecha: {
+      dia: "Fri",
+      mes: "Feb",
+      diaDelMes: "16",
+      año: "2024",
+      hora: "16:03:33",
+      timeZone: "GMT-0300",
+      timeZoneNombre: "(hora estándar de Argentina)",
+    },
   },
   {
     id: 1,
     usuario: "Juanma",
     texto: "Limpieza de Js, Css, corrección de palabras. 👀",
+    fecha: {
+      dia: "Fri",
+      mes: "Feb",
+      diaDelMes: "14",
+      año: "2024",
+      hora: "16:03:33",
+      timeZone: "GMT-0300",
+      timeZoneNombre: "(hora estándar de Argentina)",
+    },
   },
 ];
 
@@ -41,6 +86,8 @@ function tiempoDeCarga() {
 let identificadorUsuario = Usuario.filter((u) => {
   return u.id == posteos[0].username;
 });
+
+let fechaActual = Date().split(" ");
 
 let contador = 0;
 posteos.forEach(() =>
@@ -60,7 +107,7 @@ function cargarPstPrevios(usuarioEncontrado, textDePost) {
     "<div>" +
     "<h4 class='nameUser'>" +
     usuarioEncontrado +
-    "</h4>" +
+    "</h4>" + 
     "<p class='postUser'>" +
     textDePost +
     "</p>" +
@@ -101,5 +148,14 @@ function cargar() {
     id: Buscar(),
     usuario: usuarioEncontrado,
     texto: textPost.value,
+    fecha: {
+      dia: Date().split(" ")[0],
+      mes: Date().split(" ")[1],
+      diaDelMes: Date().split(" ")[2],
+      año: Date().split(" ")[3],
+      hora: Date().split(" ")[4].split(":"),
+      timeZone: Date().split(" ")[5],
+      timeZoneNombre: Date().split(" ")[6],
+    },
   });
 }
