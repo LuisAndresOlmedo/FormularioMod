@@ -21,53 +21,84 @@
   <body>
     <header height="100px">
       <img src="./I/Logo Pagina.png" width="50rem" alt="logo" />
-      <div class="flex">
+      <div style="display: flex">
         <input
-          id="MunudeUsuario"
-          onclick="mostrarOpciones()"
+          class="mostrarInicio"
+          id="menuInicio"
+          onclick="mostrarInicio()"
           type="image"
           src="./I/menu-2.svg"
-          alt="Boton de Menu"
         />
-        <input
+        <img height="45px" class="aparecer" id="ImagenPerfil" />
+      </div>
+      <div class="flex">
+          <input
+          class="botonesIniciales"
           type="button"
           id="Cambio"
           width="30px"
           value="Registrate"
           onclick="Registrarse()"
-        />
-        <div class="separador">|</div>
-        <input
+          />
+          <div class="separador">|</div>
+          <input
+          class="botonesIniciales"
           type="button"
           id="cerrar_secion"
           width="30px"
           value="Cerrar Seción"
           onclick="cerrarSeción()"
-        />
-        <input
+          />
+          <input
+          id="iniciarSeccion"
+          class="botonesIniciales"
           type="button"
           class="inciar_seccion"
           value="Iniciar Sesión"
           onclick="iniciarSeccion()"
-        />
-        <img height="45px" id="ImagenPerfil" />
-      </div>
+          />
+        </div>
     </header>
-    <menu class="buscador" style="display: flex; justify-content: space-between; padding: 0px; margin-top: 5px;">
-      <input class="buscador" value="¿Que buscas?" type="search" name="Buscador" id=""/>
+    <menu
+      class="buscador"
+      style="
+        display: flex;
+        justify-content: space-between;
+        padding: 0px;
+        margin-top: 5px;
+      "
+    >
+      <input
+        class="buscador"
+        value="¿Que buscas?"
+        type="search"
+        name="Buscador"
+        id=""
+      />
     </menu>
     <div class="FormulariosidBusqueda" id="formulario">
       <form class="error" id="error">
-        <h3>Iniciar Sesión</h3>
+        <div class="x">
+          <h4 class="letras">Iniciar Sesión</h4>
+          <input class="xButton" type="button" id="cerrarRegistros" value="X">
+        </div>
         <input type="text" value="Email" id="bCorreo" /><br />
         <input type="text" value="Contraseña" id="bPass" /><br />
         <input type="text" value="Codigo ******" id="Busqueda" /><br />
-        <input type="button" value="Iniciar" id="botoncito" onclick="Buscar()" />
+        <input
+          type="button"
+          value="Iniciar"
+          id="botoncito"
+          onclick="Buscar()"
+        />
       </form>
     </div>
     <form id="email">
       <div id="registros" class="Separando">
-        <h3>Registrarse</h3>
+        <div class="x">
+          <h4 class="letras">Registrarse</h4>
+          <input class="xButton" type="button" id="cerrarRegistros2" value="X">
+        </div>
         <div style="display: flex; justify-content: space-between">
           <input type="text" id="Nombres" value="Nombre" />
           <input

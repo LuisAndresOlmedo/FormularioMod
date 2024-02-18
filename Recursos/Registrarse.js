@@ -1,8 +1,19 @@
 document.querySelector(".postCreate").style.display = "none";
-document.querySelector(".Renombrarstyle").style.display = "none"
+document.querySelector(".Renombrarstyle").style.display = "none";
 document.querySelector("#email").style.display = "none";
 document.querySelector("#ImagenPerfil").style.display = "none";
 document.querySelector("#cerrar_secion").style.display = "none";
+const cerrar = document.getElementById("cerrarRegistros");
+const cerrar2 = document.getElementById("cerrarRegistros2");
+
+
+cerrar.addEventListener("click", () => {
+    document.querySelector(".error").style.display = "none";
+});
+
+cerrar2.addEventListener("click", () => {
+  document.querySelector("#email").style.display = "none";
+});
 
 function Registrarse() {
   switch (document.querySelector("#email").style.display) {
@@ -20,19 +31,23 @@ function Registrarse() {
   }
 }
 
-function mostrarOpciones() {
-  switch (document.querySelector("#Cambio").style.display) {
-    case "block":
-      document.querySelector("#Cambio").style.display = "none";
-      document.querySelector("#cerrar_secion").style.display = "none";
-      break;
-    case "none":
-      document.querySelector("#Cambio").style.display = "block";
-      document.querySelector("#cerrar_secion").style.display = "block";
-      break;
-    default:
-      print("No tengo idea");
-      break;
+function noMostrarInicio() {
+  var flexElement = document.querySelector(".flex");
+  flexElement.style.display = "none";
+
+}
+
+function mostrarInicio() {
+  var flexElement = document.querySelector(".flex");
+
+  if (flexElement.style.display === "none") {
+    flexElement.style.display = "block";
+    flexElement.style.position = "fixed";
+    flexElement.style.top = "84px";
+    flexElement.style.right = "3%";
+    document.querySelector(".separador").style.display = "none";
+  } else {
+    noMostrarInicio();
   }
 }
 

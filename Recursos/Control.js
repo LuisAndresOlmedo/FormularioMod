@@ -16,9 +16,8 @@ const Correito = document.getElementById("Correo");
 const botoncito = document.getElementById("botoncito");
 let cambios_de_valores = document.getElementById("Cambio");
 
-document.querySelector("#MunudeUsuario").style.display = "none";
 document.querySelector(".error").style.display = "none";
-document.querySelector(".inciar_seccion").style.display = "block";
+document.querySelector(".aparecer").style.display = "none";
 
 let EtiquetaP = {};
 let Etiquetas = "<h5></h5>";
@@ -133,10 +132,6 @@ let Usuario = [
   },
 ];
 
-//document.addEventListener("keydown", function(envento) {
-//  console.log(envento);
-//});
-
 let cantidadUsuario = Usuario.length;
 
 function azares() {
@@ -166,13 +161,12 @@ function Buscar() {
       pushDatos();
       setTimeout(() => {
         document.querySelector("#error").style.display = "none";
-        document.querySelector(".inciar_seccion").style.display = "none";
         cambios_de_valores.value = "Editar perfil";
-        document.querySelector("#Cambio").style.display = "none";
+        document.querySelector("#iniciarSeccion").style.display = "none";
+        document.querySelector("#cerrar_secion").style.display = "block";
         document.querySelector(".Renombrarstyle").style.display = "block";
         document.querySelector(".postCreate").style.display = "block";
       }, 1000);
-      document.querySelector("#MunudeUsuario").style.display = "block";
       document.querySelector("#Guardando").style.display = "none";
       document.querySelector("#Guardando").style.display = "none";
       document.querySelector("#ImagenPerfil").style.display = "block";

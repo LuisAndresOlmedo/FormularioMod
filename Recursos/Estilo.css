@@ -34,6 +34,7 @@
   position: fixed;
   left: 0;
   right: 0;
+  top: 10%;
 }
 
 #rembrar2 {
@@ -71,6 +72,7 @@ form {
   position: fixed;
   left: 0;
   right: 0;
+  top: 10%;
 }
 
 .separador {
@@ -222,6 +224,26 @@ h4 {
   max-width: 400px;
   padding: 4px;
 }
+.mostrarInicio {
+  display: none;
+}
+.x {
+  display: flex;
+  justify-content: space-between;
+}
+.xButton {
+  background-color: red !important;
+  color: #fff !important;
+  font-weight: 600;
+  width: 50px !important;
+  height: 50px;
+}
+.letras {
+  font-family: system-ui;
+  font-size: xx-large;
+  font-weight: 900;
+  margin-left: 0px !important;
+}
 
 @media only screen and (max-width: 720px) {
   body {
@@ -245,23 +267,51 @@ h4 {
     padding: 10px;
   }
 
-  th,
-  td {
-    width: 100%;
-  }
-  #miTabla {
-    display: none;
-  }
   header {
-    display: block;
+    display: flex;
   }
   #email {
     width: 90%;
   }
   .error {
+    top: 10%;
     width: 90%;
   }
   #MunudeUsuario {
     display: block;
+    width: 50px;
+  }
+  .flex {
+    display: none;
+  }
+  .mostrarInicio {
+    display: block;
+    width: 50px;
+  }
+  .botonesIniciales {
+    background: linear-gradient(
+      179.72deg,
+      rgba(47, 203, 34, 0) -51.71%,
+      #95cb22 99.76%
+    );
+    font-weight: 600;
+    border: 1px solid transparent !important;
+    border-radius: 24px !important;
+    text-align: right;
+    width: 150px !important;
+    display: block;
+  }
+}
+@media only screen and (min-width: 720px) {
+  .aparecer {
+    display: none !important;
+  }
+  .flex {
+    display: flex !important;
+    align-items: center;
+    position: static !important;
+  }
+  .separador {
+    display: block !important;
   }
 }
