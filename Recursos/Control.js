@@ -15,6 +15,7 @@ const mes = document.getElementById("fechaNacimiento");
 const Correito = document.getElementById("Correo");
 const botoncito = document.getElementById("botoncito");
 let cambios_de_valores = document.getElementById("Cambio");
+const cosita = document.getElementById("cambioRegistroAEditarPerfil");
 
 document.querySelector(".error").style.display = "none";
 document.querySelector(".aparecer").style.display = "none";
@@ -164,9 +165,10 @@ function Buscar() {
         cambios_de_valores.value = "Editar perfil";
         document.querySelector("#iniciarSeccion").style.display = "none";
         document.querySelector("#cerrar_secion").style.display = "block";
-        document.querySelector(".Renombrarstyle").style.display = "block";
+        document.querySelector("#Renombrarcosas").style.display = "block";
         document.querySelector(".postCreate").style.display = "block";
       }, 1000);
+      cosita.innerHTML = "Editar perfil";
       document.querySelector("#Guardando").style.display = "none";
       document.querySelector("#Guardando").style.display = "none";
       document.querySelector("#ImagenPerfil").style.display = "block";
@@ -178,8 +180,8 @@ function Buscar() {
   }
 
   function pushDatos() {
-    Inputinit.value = Personas.nombres || Personas.name.firstname.toUpperCase;
-    Apellido.value = Personas.apellido || Personas.name.lastname.toUpperCase;
+    Inputinit.value = Personas.nombres || Personas.name.firstname;
+    Apellido.value = Personas.apellido || Personas.name.lastname;
     Instagram.value = Personas.Instagram;
     Correito.value = Personas.email;
     mes.value = Personas.Mes;

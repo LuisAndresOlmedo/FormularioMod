@@ -11,12 +11,6 @@
       name="google-site-verification"
       content="Ck-OqdXrdWaWtTmbrKLVNmRGiJLlP0Dh1mIp2JRu1U8"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <header height="100px">
@@ -32,32 +26,31 @@
         <img height="45px" class="aparecer" id="ImagenPerfil" />
       </div>
       <div class="flex">
-          <input
+        <input
           class="botonesIniciales"
           type="button"
           id="Cambio"
           width="30px"
           value="Registrate"
           onclick="Registrarse()"
-          />
-          <div class="separador">|</div>
-          <input
+        />
+        <div class="separador">|</div>
+        <input
           class="botonesIniciales"
           type="button"
           id="cerrar_secion"
           width="30px"
           value="Cerrar Seción"
           onclick="cerrarSeción()"
-          />
-          <input
+        />
+        <input
           id="iniciarSeccion"
-          class="botonesIniciales"
+          class="botonesIniciales inciar_seccion"
           type="button"
-          class="inciar_seccion"
           value="Iniciar Sesión"
           onclick="iniciarSeccion()"
-          />
-        </div>
+        />
+      </div>
     </header>
     <menu
       class="buscador"
@@ -73,19 +66,20 @@
         value="¿Que buscas?"
         type="search"
         name="Buscador"
-        id=""
+        id="filtro"
       />
     </menu>
     <div class="FormulariosidBusqueda" id="formulario">
       <form class="error" id="error">
         <div class="x">
           <h4 class="letras">Iniciar Sesión</h4>
-          <input class="xButton" type="button" id="cerrarRegistros" value="X">
+          <input class="xButton" type="button" id="cerrarRegistros" value="X" />
         </div>
         <input type="text" value="Email" id="bCorreo" /><br />
         <input type="text" value="Contraseña" id="bPass" /><br />
         <input type="text" value="Codigo ******" id="Busqueda" /><br />
         <input
+          class="bottonOnclick"
           type="button"
           value="Iniciar"
           id="botoncito"
@@ -96,8 +90,13 @@
     <form id="email">
       <div id="registros" class="Separando">
         <div class="x">
-          <h4 class="letras">Registrarse</h4>
-          <input class="xButton" type="button" id="cerrarRegistros2" value="X">
+          <h4 id="cambioRegistroAEditarPerfil" class="letras">Registrarse</h4>
+          <input
+            class="xButton"
+            type="button"
+            id="cerrarRegistros2"
+            value="X"
+          />
         </div>
         <div style="display: flex; justify-content: space-between">
           <input type="text" id="Nombres" value="Nombre" />
@@ -141,21 +140,23 @@
             type="file"
             class="Cargarimagen"
             name="archivo"
-            id="ImagenPerfil"
+            id="cargarImagenPerfil"
             accept=".jpg, .jpeg, .png"
           />
         </div>
         <input
+          class="bottonOnclick"
           type="button"
           value="Registrarse"
           id="Guardando"
           onclick="DatosUsuarios()"
         />
         <input
+          class="bottonOnclick"
           type="button"
           value="Renombrar"
           onclick="Renombrar()"
-          class="Renombrarstyle"
+          id="Renombrarcosas"
         />
       </div>
     </form>
@@ -164,8 +165,10 @@
       <div id="Seguridad"></div>
     </div>
     <form class="postCreate" method="post">
+      <h4 class="letras">Publicar</h4>
       <input type="text" name="post" id="post" />
       <input
+        class="bottonOnclick"
         type="button"
         value="Postear"
         class="cargarBotton"
@@ -175,7 +178,7 @@
     </form>
     <div id="postLoad"></div>
     <hr style="border: 1px solid #ccc" />
-    <div>
+    <!-- <div>
       <input
         type="button"
         value="Mostrar Usuarios"
@@ -199,12 +202,12 @@
         <tbody id="tbodyID">
           <tr></tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
     <script type="module" src="firebase.js"></script>
     <script src="./Recursos/Control.js"></script>
     <script src="./Recursos/postCreat.js"></script>
-    <script src="./Recursos/Tabla.js"></script>
+    <!-- <script src="./Recursos/Tabla.js"></script> -->
     <script src="./Recursos/Registrarse.js"></script>
     <!--    <script src="./chatbot.js"></script> -->
     <!-- estamos fabricando el chat bot

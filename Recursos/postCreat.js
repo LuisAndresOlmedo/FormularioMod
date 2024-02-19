@@ -1,11 +1,18 @@
 let posteo = document.getElementById("postCreador");
 var postLoad = document.getElementById("postLoad");
 let textPost = document.getElementById("post");
+const filtroS = document.getElementById("filtro");
+
+function ejecutar() {
+  let objeto = Usuario.find((u) => u.username == filtroS.value);
+  return posteos.find((p) => p.usuario == objeto.username)
+};
+
 const posteos = [
   {
     id: 36,
     texto: "Post Prueba ✅",
-    usuario: "@mor_2314",
+    usuario: "@juanCarlos",
     fecha: {
       dia: "Fri",
       mes: "Feb",
@@ -60,7 +67,7 @@ const posteos = [
   },
   {
     id: 1,
-    usuario: "Juanma",
+    usuario: "@juanCarlos",
     texto: "Limpieza de Js, Css, corrección de palabras. 👀",
     fecha: {
       dia: "Fri",
@@ -87,6 +94,9 @@ let identificadorUsuario = Usuario.filter((u) => {
   return u.id == posteos[0].username;
 });
 
+// Usuario.find(p => p.nombres == posteos[Buscar()].nombres);
+// posteos.filter((u) => u.usuario == Usuario[Buscar()].Instagram);
+
 let fechaActual = Date().split(" ");
 
 let contador = 0;
@@ -107,7 +117,7 @@ function cargarPstPrevios(usuarioEncontrado, textDePost) {
     "<div>" +
     "<h4 class='nameUser'>" +
     usuarioEncontrado +
-    "</h4>" + 
+    "</h4>" +
     "<p class='postUser'>" +
     textDePost +
     "</p>" +
