@@ -63,7 +63,7 @@ let Usuario = [
   {
     nombres: "Luis Andres",
     apellido: "Olmedo",
-    Instagram: "@Luisandres.nk",
+    Instagram: "@luisandres.nk",
     Imagen: "./I/Usuario.png",
     Mes: "2000-09",
     Pass: "AdministradoresDeEmpresas2000",

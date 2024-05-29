@@ -2,11 +2,21 @@ let posteo = document.getElementById("postCreador");
 var postLoad = document.getElementById("postLoad");
 let textPost = document.getElementById("post");
 const filtroS = document.getElementById("filtro");
+const exportPostBuscador = document.getElementById("resultadoFiltro");
+
+let contador1 = 0;
 
 function ejecutar() {
-  let objeto = Usuario.find((u) => u.username == filtroS.value);
-  return posteos.find((p) => p.usuario == objeto.username)
-};
+  let objeto = Usuario.find((u) => u.Instagram == filtroS.value);
+  let objet = posteos.filter((U) => U.usuario == objeto.Instagram);
+  var plus =
+    "<div class='mostrarUsuarios'><p class='username'>" +
+    objet[contador1++].usuario +
+    "</p><p>" +
+    objet[contador1++].texto +
+    "</p></div>";
+  return objet.forEach(() => exportPostBuscador.innerHTML = plus);
+}
 
 const posteos = [
   {
@@ -93,9 +103,6 @@ function tiempoDeCarga() {
 let identificadorUsuario = Usuario.filter((u) => {
   return u.id == posteos[0].username;
 });
-
-// Usuario.find(p => p.nombres == posteos[Buscar()].nombres);
-// posteos.filter((u) => u.usuario == Usuario[Buscar()].Instagram);
 
 let fechaActual = Date().split(" ");
 

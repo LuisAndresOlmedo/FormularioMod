@@ -253,6 +253,11 @@ h4 {
   font-weight: 600;
   margin-top: 5%;
 }
+#resultadoFiltro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 @media only screen and (max-width: 720px) {
   body {

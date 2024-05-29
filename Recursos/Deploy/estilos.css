@@ -1,0 +1,191 @@
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+header {
+  color: white;
+  background-color: #252f3d;
+}
+header div {
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+  display: flex;
+}
+.header-logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 25px;
+  padding: 0px 15px;
+}
+.header-title {
+  text-align: center;
+}
+.headerMobile {
+  display: none;
+}
+button {
+  background-color: #252f3d;
+  border: 2px solid #252f3c;
+}
+.progress-shop {
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+}
+.progress-shop div {
+  display: flex;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  -webkit-text-stroke-width: medium;
+  color: black;
+}
+.product {
+  justify-content: center;
+  width: auto;
+  display: flex;
+  padding: 0 100px;
+}
+.product div {
+  padding: 0 2px;
+  font-size: 93%;
+}
+.produc-point {
+  display: flex;
+  align-items: center;
+}
+.img-product-one {
+  border-radius: 15%;
+}
+.img-back-product {
+  background-color: #2c7ef8;
+  border-radius: 15%;
+}
+.red {
+  color: red !important;
+}
+.space {
+  margin: 0px 10px;
+}
+.xspace {
+  margin: 0px;
+}
+strong {
+  color: #2c7ef8;
+}
+span {
+  color: #2c7ef8;
+  -webkit-text-stroke-width: medium;
+  padding: 10px;
+}
+.small {
+  font-size: small;
+}
+.profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.buttonSucces {
+  font-size: x-large;
+  font-weight: 700;
+  color: white;
+  width: 99%;
+  height: 50px;
+  background: #59ae43;
+  border-radius: 50px;
+}
+.element {
+  padding: 0px;
+}
+p {
+  margin-left: 10px;
+}
+footer {
+  justify-content: space-around;
+  display: flex;
+  color: white;
+  background-color: #252f3d;
+}
+footer div {
+  justify-content: center;
+  margin: 1%;
+  align-items: center;
+  display: flex;
+}
+.algo {
+  display: block;
+}
+.progress-shop div {
+  margin: 10px;
+}
+.spy {
+  display: none;
+}
+.noSpy {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  header {
+    font-size: x-small;
+  }
+}
+
+@media (max-width: 720px) {
+  footer {
+    font-size: x-small;
+    display: block;
+  }
+  .spy {
+    display: block;
+  }
+  .noSpy {
+    display: none;
+  }
+  .not-phone {
+    display: none;
+  }
+  .progress-shop div {
+    display: block;
+    text-align: center;
+  }
+  .headerDesktop {
+    display: none;
+  }
+  .headerMobile {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+  }
+  .algo {
+    display: flex;
+  }
+  .header-logo img {
+    width: 40%;
+  }
+  .header-logo {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  svg {
+    width: 50%;
+  }
+  .header-logo img {
+    width: 90%;
+  }
+  .headerMobile {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+  }
+}
