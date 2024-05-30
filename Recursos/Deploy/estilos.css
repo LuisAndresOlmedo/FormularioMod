@@ -182,6 +182,7 @@ footer div {
   }
   .product {
     padding: 0px;
+    display: block;
   }
   .header-logo img {
     width: 90%;
