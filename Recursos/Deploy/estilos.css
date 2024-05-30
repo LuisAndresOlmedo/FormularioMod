@@ -176,9 +176,12 @@ footer div {
   }
 }
 
-@media (max-width: 400px) {
-  svg {
-    width: 50%;
+@media (max-width: 480px) {
+  a {
+    font-size: small;
+  }
+  .product {
+    padding: 0px;
   }
   .header-logo img {
     width: 90%;
