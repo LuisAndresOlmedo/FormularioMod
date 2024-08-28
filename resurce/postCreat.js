@@ -130,9 +130,9 @@ function cargarPstPrevios(usuarioEncontrado, textDePost) {
     "</p>" +
     "</div>" +
     "<div class='editarEliminar'>" +
-    "<input type='image' src='./I/🦆 icon _edit pencil_.png' class='botonImagen'>" +
+    "<input type='image' src='./image/🦆 icon _edit pencil_.png' class='botonImagen'>" +
     "</br>" +
-    "<input type='image' src='./I/🦆 icon _trash_.png' class='botonImagen'>" +
+    "<input type='image' src='./image/🦆 icon _trash_.png' class='botonImagen'>" +
     "</div>" +
     "</div>";
   boxPost.innerHTML = postearPost;

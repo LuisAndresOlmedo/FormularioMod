@@ -22,7 +22,7 @@ document.querySelector(".aparecer").style.display = "none";
 
 let EtiquetaP = {};
 let Etiquetas = "<h5></h5>";
-imagenes.src = "./I/Avatar.png";
+imagenes.src = "./image/Avatar.png";
 var soloImagen = imagenes.src;
 
 try {
@@ -64,7 +64,7 @@ let Usuario = [
     nombres: "Luis Andres",
     apellido: "Olmedo",
     Instagram: "@luisandres.nk",
-    Imagen: "./I/Usuario.png",
+    Imagen: "./image/Usuario.png",
     Mes: "2000-09",
     Pass: "AdministradoresDeEmpresas2000",
     dia: "13",
@@ -78,7 +78,7 @@ let Usuario = [
     nombres: "Juan",
     apellido: "Carlos",
     Instagram: "@juanCarlos",
-    Imagen: "./I/Usuario 2.png",
+    Imagen: "./image/Usuario 2.png",
     Mes: "2022-07",
     Pass: "JuanGuarnizoes1",
     dia: "12",
@@ -93,7 +93,7 @@ let Usuario = [
     nombres: "Jose",
     apellido: "Montenegro",
     Instagram: "@JoseMontenegro",
-    Imagen: "./I/usuarios (1).png",
+    Imagen: "./image/usuarios (1).png",
     Mes: "2022-07",
     Pass: "54esf54e",
     dia: "12",
@@ -107,7 +107,7 @@ let Usuario = [
     nombres: "Leo",
     apellido: "Villalva",
     Instagram: "@LeoVillalva",
-    Imagen: "./I/usuarios (2).png",
+    Imagen: "./image/usuarios (2).png",
     Mes: "2022-07",
     Pass: "099udjmfd",
     dia: "12",
@@ -121,7 +121,7 @@ let Usuario = [
     nombres: "Fernando",
     apellido: "Flores",
     Instagram: "@FernandoFlores",
-    Imagen: "./I/usuarios (3).png",
+    Imagen: "./image/usuarios (3).png",
     Mes: "2022-07",
     Pass: "8df98dsf9",
     dia: "12",

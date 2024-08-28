@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Recursos/Estilo.css" />
+    <link rel="stylesheet" href="./resurce/style.css" />
     <title>Formularios ✅</title>
-    <link rel="icon" type="image/jpg" href="./I/favicon.jpeg" />
+    <link rel="icon" type="image/jpg" href="./image/favicon.jpeg" />
     <meta
       name="google-site-verification"
       content="Ck-OqdXrdWaWtTmbrKLVNmRGiJLlP0Dh1mIp2JRu1U8"
@@ -14,14 +14,14 @@
   </head>
   <body>
     <header height="100px">
-      <img src="./I/Logo Pagina.png" width="50rem" alt="logo" />
+      <img src="./image/Pagina.png" width="50rem" alt="logo" />
       <div style="display: flex">
         <input
           class="mostrarInicio"
           id="menuInicio"
           onclick="mostrarInicio()"
           type="image"
-          src="./I/menu-2.svg"
+          src="./image/menu-2.svg"
         />
         <img height="45px" class="aparecer" id="ImagenPerfil" />
       </div>
@@ -162,54 +162,54 @@
       </div>
     </form>
     <div class="FormulariosidBusqueda">
-      <!-- <div id="Cliente" class="Contenedores_aparecidos"></div> -->
       <div id="Seguridad"></div>
     </div>
     <form class="postCreate" method="post">
       <h4 class="letras">Publicar</h4>
       <input type="text" name="post" id="post" />
       <input
-        class="bottonOnclick"
-        type="button"
-        value="Postear"
-        class="cargarBotton"
-        id="postCreador"
-        onclick="cargar()"
+      class="bottonOnclick"
+      type="button"
+      value="Postear"
+      class="cargarBotton"
+      id="postCreador"
+      onclick="cargar()"
       />
     </form>
     <div id="postLoad"></div>
     <hr style="border: 1px solid #ccc" />
-    <!-- <div>
-      <input
-        type="button"
-        value="Mostrar Usuarios"
-        onclick="numerosMas()"
-        id="mostrarUsuarios"
-      />
-      <input
-        type="button"
-        value="Eliminar usuario"
-        onclick="eliminar()"
-        id="eliminarUsuarios"
-      />
-      <table id="miTabla">
-        <thead>
-          <tr>
-            <th>Correos</th>
-            <th>contraseñas</th>
-            <th>ID</th>
-          </tr>
-        </thead>
-        <tbody id="tbodyID">
-          <tr></tr>
-        </tbody>
-      </table> -->
-    </div>
-    <script type="module" src="firebase.js"></script>
-    <script src="./Recursos/Control.js"></script>
-    <script src="./Recursos/postCreat.js"></script>
+  </div>
+  <script src="./firebase/"></script>
+  <script src="./resurce/Control.js"></script>
+  <script src="./resurce/postCreat.js"></script>
+  <script src="./resurce/Registrarse.js"></script>
+  <!-- <div id="Cliente" class="Contenedores_aparecidos"></div> -->
+  <!-- <div>
+    <input
+    type="button"
+    value="Mostrar Usuarios"
+    onclick="numerosMas()"
+      id="mostrarUsuarios"
+    />
+    <input
+      type="button"
+      value="Eliminar usuario"
+      onclick="eliminar()"
+      id="eliminarUsuarios"
+    />
+    <table id="miTabla">
+      <thead>
+        <tr>
+          <th>Correos</th>
+          <th>contraseñas</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody id="tbodyID">
+        <tr></tr>
+      </tbody>
+    </table> -->
     <!-- <script src="./Recursos/Tabla.js"></script> -->
-    <script src="./Recursos/Registrarse.js"></script>
     <!--    <script src="./chatbot.js"></script> -->
     <!-- estamos fabricando el chat bot
             <form>
