@@ -126,7 +126,7 @@ function cargarPstPrevios(usuarioEncontrado, textDePost) {
     usuarioEncontrado +
     "</h4>" +
     "<p class='postUser'>" +
-    textDePost +
+    textDePost + 
     "</p>" +
     "</div>" +
     "<div class='editarEliminar'>" +

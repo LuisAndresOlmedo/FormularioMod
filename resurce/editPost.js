@@ -1,1 +1,2 @@
 // Editar post
+    textoMode = "perro";

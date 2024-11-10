@@ -26,36 +26,37 @@ imagenes.src = "./image/Avatar.png";
 var soloImagen = imagenes.src;
 
 try {
-  const url = fetch("https://fakestoreapi.com/users")
-    .then((respuesta) => respuesta.json())
-    .then((json) => {
-      const usuarios_extras = json.map(
-        ({ address, email, name, password, phone, username }) => {
-          return {
-            address,
-            email,
-            id: azares(),
-            name,
-            password,
-            phone,
-            username,
-            Imagen: soloImagen,
-            Mes: "2000-09",
-            dia: "13",
-            sexo: "",
-            Identificador: cantidadUsuario++,
-            Instagram: "@" + name.firstname + name.lastname,
-          };
-        }
-      );
-      Usuario.push(...usuarios_extras);
-      tiempoDeCarga();
-      return Usuario, usuarioPost;
-    });
-  console.log("usuarios con exito ✅");
-} catch (error) {
-  console.log("No está pusheando los usuarios");
-}
+    const url = fetch('https://fakestoreapi.com/users')
+      .then((respuesta) => respuesta.json())
+      .then((json) => {
+        const usuarios_extras = json.map(
+          ({ address, email, name, password, phone, username }) => {
+            return {
+              address,
+              email,
+              id: azares(),
+              name,
+              password,
+              phone,
+              username,
+              Imagen: soloImagen,
+              Mes: "2000-09",
+              dia: "13",
+              sexo: "",
+              Identificador: cantidadUsuario++,
+              Instagram: "@" + name.firstname + name.lastname,
+            };
+          }
+        );
+        Usuario.push(...usuarios_extras);
+        tiempoDeCarga();
+        return Usuario, usuarioPost;
+      });
+    console.log("usuarios con exito ✅");
+  } catch (e) {
+    console.log("No está pusheando los usuarios");
+  }
+
 
 // Objeto Usuario
 
